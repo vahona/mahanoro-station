@@ -1,6 +1,8 @@
  import {createStore} from 'redux';
  import reducers from './reducers'
-
- const store = createStore(reducers, '')
+  import state from "./state";
+ const store = createStore(reducers, state)
 
  export default store
+
+ 
