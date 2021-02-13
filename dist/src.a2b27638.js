@@ -36243,31 +36243,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.placesStation = placesStation;
+exports.default = place;
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function placesStation() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
+function place(state = [], action) {
   switch (action.type) {
     case 'SOME_PLACES':
       {
-        var existplace = state.map(function (place) {
-          return [].concat(_toConsumableArray(place), [action.payload]);
+        const somePlace = state.map(place => {
+          return { ...place
+          };
         });
-        return existplace;
+        return somePlace;
       }
 
     default:
@@ -36289,7 +36275,7 @@ var _whereThePlaceReducer = _interopRequireDefault(require("./whereThePlaceReduc
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = (0, _redux.combineReducers)({
-  placesStation: _whereThePlaceReducer.default
+  place: _whereThePlaceReducer.default
 });
 
 exports.default = _default;
@@ -37952,7 +37938,7 @@ var _state = _interopRequireDefault(require("./state"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)(_reducers.default, _state.default);
+const store = (0, _redux.createStore)(_reducers.default, _state.default);
 var _default = store;
 exports.default = _default;
 },{"redux":"node_modules/redux/es/redux.js","./reducers":"src/reducers/index.js","./state":"src/state.js"}],"node_modules/shallowequal/index.js":[function(require,module,exports) {
@@ -38970,31 +38956,25 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 function v() {
   return (v = Object.assign || function (e) {
     for (var t = 1; t < arguments.length; t++) {
       var n = arguments[t];
 
-      for (var r in n) {
-        Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
-      }
+      for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
     }
 
     return e;
   }).apply(this, arguments);
 }
 
-var g = function g(e, t) {
-  for (var n = [e[0]], r = 0, o = t.length; r < o; r += 1) {
-    n.push(t[r], e[r + 1]);
-  }
+var g = function (e, t) {
+  for (var n = [e[0]], r = 0, o = t.length; r < o; r += 1) n.push(t[r], e[r + 1]);
 
   return n;
 },
-    S = function S(t) {
-  return null !== t && "object" == _typeof(t) && "[object Object]" === (t.toString ? t.toString() : Object.prototype.toString.call(t)) && !(0, _reactIs.typeOf)(t);
+    S = function (t) {
+  return null !== t && "object" == typeof t && "[object Object]" === (t.toString ? t.toString() : Object.prototype.toString.call(t)) && !(0, _reactIs.typeOf)(t);
 },
     w = Object.freeze([]),
     E = Object.freeze({});
@@ -39038,9 +39018,7 @@ var A = "undefined" != typeof process && (undefined || undefined) || "data-style
 exports.version = C;
 
 function D() {
-  for (var e = arguments.length <= 0 ? void 0 : arguments[0], t = [], n = 1, r = arguments.length; n < r; n += 1) {
-    t.push(n < 0 || arguments.length <= n ? void 0 : arguments[n]);
-  }
+  for (var e = arguments.length <= 0 ? void 0 : arguments[0], t = [], n = 1, r = arguments.length; n < r; n += 1) t.push(n < 0 || arguments.length <= n ? void 0 : arguments[n]);
 
   return t.forEach(function (t) {
     e = e.replace(/%[a-z]/, t);
@@ -39048,9 +39026,7 @@ function D() {
 }
 
 function j(e) {
-  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) {
-    n[r - 1] = arguments[r];
-  }
+  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) n[r - 1] = arguments[r];
 
   throw "production" === "development" ? new Error("An error occurred. See https://git.io/JUIaE#" + e + " for more information." + (n.length > 0 ? " Args: " + n.join(", ") : "")) : new Error(D.apply(void 0, [R[e]].concat(n)).trim());
 }
@@ -39062,27 +39038,19 @@ var T = function () {
 
   var t = e.prototype;
   return t.indexOfGroup = function (e) {
-    for (var t = 0, n = 0; n < e; n++) {
-      t += this.groupSizes[n];
-    }
+    for (var t = 0, n = 0; n < e; n++) t += this.groupSizes[n];
 
     return t;
   }, t.insertRules = function (e, t) {
     if (e >= this.groupSizes.length) {
-      for (var n = this.groupSizes, r = n.length, o = r; e >= o;) {
-        (o <<= 1) < 0 && j(16, "" + e);
-      }
+      for (var n = this.groupSizes, r = n.length, o = r; e >= o;) (o <<= 1) < 0 && j(16, "" + e);
 
       this.groupSizes = new Uint32Array(o), this.groupSizes.set(n), this.length = o;
 
-      for (var s = r; s < o; s++) {
-        this.groupSizes[s] = 0;
-      }
+      for (var s = r; s < o; s++) this.groupSizes[s] = 0;
     }
 
-    for (var i = this.indexOfGroup(e + 1), a = 0, c = t.length; a < c; a++) {
-      this.tag.insertRule(i, t[a]) && (this.groupSizes[e]++, i++);
-    }
+    for (var i = this.indexOfGroup(e + 1), a = 0, c = t.length; a < c; a++) this.tag.insertRule(i, t[a]) && (this.groupSizes[e]++, i++);
   }, t.clearGroup = function (e) {
     if (e < this.length) {
       var t = this.groupSizes[e],
@@ -39090,17 +39058,13 @@ var T = function () {
           r = n + t;
       this.groupSizes[e] = 0;
 
-      for (var o = n; o < r; o++) {
-        this.tag.deleteRule(n);
-      }
+      for (var o = n; o < r; o++) this.tag.deleteRule(n);
     }
   }, t.getGroup = function (e) {
     var t = "";
     if (e >= this.length || 0 === this.groupSizes[e]) return t;
 
-    for (var n = this.groupSizes[e], r = this.indexOfGroup(e), o = r + n, s = r; s < o; s++) {
-      t += this.tag.getRule(s) + "/*!sc*/\n";
-    }
+    for (var n = this.groupSizes[e], r = this.indexOfGroup(e), o = r + n, s = r; s < o; s++) t += this.tag.getRule(s) + "/*!sc*/\n";
 
     return t;
   }, e;
@@ -39108,30 +39072,26 @@ var T = function () {
     k = new Map(),
     x = new Map(),
     V = 1,
-    B = function B(e) {
+    B = function (e) {
   if (k.has(e)) return k.get(e);
 
-  for (; x.has(V);) {
-    V++;
-  }
+  for (; x.has(V);) V++;
 
   var t = V++;
   return "production" !== "development" && ((0 | t) < 0 || t > 1 << 30) && j(16, "" + t), k.set(e, t), x.set(t, e), t;
 },
-    M = function M(e) {
+    M = function (e) {
   return x.get(e);
 },
-    z = function z(e, t) {
+    z = function (e, t) {
   k.set(e, t), x.set(t, e);
 },
     L = "style[" + A + '][data-styled-version="5.2.1"]',
     G = new RegExp("^" + A + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'),
-    F = function F(e, t, n) {
-  for (var r, o = n.split(","), s = 0, i = o.length; s < i; s++) {
-    (r = o[s]) && e.registerName(t, r);
-  }
+    F = function (e, t, n) {
+  for (var r, o = n.split(","), s = 0, i = o.length; s < i; s++) (r = o[s]) && e.registerName(t, r);
 },
-    Y = function Y(e, t) {
+    Y = function (e, t) {
   for (var n = t.innerHTML.split("/*!sc*/\n"), r = [], o = 0, s = n.length; o < s; o++) {
     var i = n[o].trim();
 
@@ -39146,10 +39106,10 @@ var T = function () {
     }
   }
 },
-    q = function q() {
+    q = function () {
   return "undefined" != typeof __webpack_nonce__ ? __webpack_nonce__ : null;
 },
-    H = function H(e) {
+    H = function (e) {
   var t = document.head,
       n = e || t,
       r = document.createElement("style"),
@@ -39295,7 +39255,7 @@ var T = function () {
   }, e;
 }(),
     K = /(a)(d)/gi,
-    Q = function Q(e) {
+    Q = function (e) {
   return String.fromCharCode(e + (e > 25 ? 39 : 97));
 };
 
@@ -39303,21 +39263,17 @@ function ee(e) {
   var t,
       n = "";
 
-  for (t = Math.abs(e); t > 52; t = t / 52 | 0) {
-    n = Q(t % 52) + n;
-  }
+  for (t = Math.abs(e); t > 52; t = t / 52 | 0) n = Q(t % 52) + n;
 
   return (Q(t % 52) + n).replace(K, "$1-$2");
 }
 
-var te = function te(e, t) {
-  for (var n = t.length; n;) {
-    e = 33 * e ^ t.charCodeAt(--n);
-  }
+var te = function (e, t) {
+  for (var n = t.length; n;) e = 33 * e ^ t.charCodeAt(--n);
 
   return e;
 },
-    ne = function ne(e) {
+    ne = function (e) {
   return te(5381, e);
 };
 
@@ -39424,7 +39380,7 @@ function ce(e) {
   }(function (e) {
     d.push(e);
   }),
-      f = function f(e, r, s) {
+      f = function (e, r, s) {
     return 0 === r && ae.includes(s[n.length]) || s.match(o) ? e : "." + t;
   };
 
@@ -39513,7 +39469,7 @@ var ve = function () {
     ge = /([A-Z])/,
     Se = /([A-Z])/g,
     we = /^ms-/,
-    Ee = function Ee(e) {
+    Ee = function (e) {
   return "-" + e.toLowerCase();
 };
 
@@ -39521,15 +39477,13 @@ function be(e) {
   return ge.test(e) ? e.replace(Se, Ee).replace(we, "-ms-") : e;
 }
 
-var _e = function _e(e) {
+var _e = function (e) {
   return null == e || !1 === e || "" === e;
 };
 
 function Ne(e, n, r, o) {
   if (Array.isArray(e)) {
-    for (var s, i = [], a = 0, c = e.length; a < c; a += 1) {
-      "" !== (s = Ne(e[a], n, r, o)) && (Array.isArray(s) ? i.push.apply(i, s) : i.push(s));
-    }
+    for (var s, i = [], a = 0, c = e.length; a < c; a += 1) "" !== (s = Ne(e[a], n, r, o)) && (Array.isArray(s) ? i.push.apply(i, s) : i.push(s));
 
     return i;
   }
@@ -39549,25 +39503,21 @@ function Ne(e, n, r, o) {
         o,
         s = [];
 
-    for (var i in t) {
-      t.hasOwnProperty(i) && !_e(t[i]) && (S(t[i]) ? s.push.apply(s, e(t[i], i)) : b(t[i]) ? s.push(be(i) + ":", t[i], ";") : s.push(be(i) + ": " + (r = i, null == (o = t[i]) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || r in _unitless.default ? String(o).trim() : o + "px") + ";"));
-    }
+    for (var i in t) t.hasOwnProperty(i) && !_e(t[i]) && (S(t[i]) ? s.push.apply(s, e(t[i], i)) : b(t[i]) ? s.push(be(i) + ":", t[i], ";") : s.push(be(i) + ": " + (r = i, null == (o = t[i]) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || r in _unitless.default ? String(o).trim() : o + "px") + ";"));
 
     return n ? [n + " {"].concat(s, ["}"]) : s;
   }(e) : e.toString();
 }
 
 function Ae(e) {
-  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) {
-    n[r - 1] = arguments[r];
-  }
+  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) n[r - 1] = arguments[r];
 
   return b(e) || S(e) ? Ne(g(w, [e].concat(n))) : 0 === n.length && 1 === e.length && "string" == typeof e[0] ? e : Ne(g(e, n));
 }
 
 var Ce = /invalid hook call/i,
     Ie = new Set(),
-    Pe = function Pe(e, t) {
+    Pe = function (e, t) {
   if ("production" !== "development") {
     var n = "The component " + e + (t ? ' with the id of "' + t + '"' : "") + " has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.";
 
@@ -39578,7 +39528,7 @@ var Ce = /invalid hook call/i,
     }
   }
 },
-    Oe = function Oe(e, t, n) {
+    Oe = function (e, t, n) {
   return void 0 === n && (n = E), e.theme !== n.theme && e.theme || t || n.theme;
 },
     Re = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,
@@ -39588,7 +39538,7 @@ function je(e) {
   return e.replace(Re, "-").replace(De, "");
 }
 
-var Te = function Te(e) {
+var Te = function (e) {
   return ee(ne(e) >>> 0);
 };
 
@@ -39596,10 +39546,10 @@ function ke(e) {
   return "string" == typeof e && ("production" === "development" || e.charAt(0) === e.charAt(0).toLowerCase());
 }
 
-var xe = function xe(e) {
-  return "function" == typeof e || "object" == _typeof(e) && null !== e && !Array.isArray(e);
+var xe = function (e) {
+  return "function" == typeof e || "object" == typeof e && null !== e && !Array.isArray(e);
 },
-    Ve = function Ve(e) {
+    Ve = function (e) {
   return "__proto__" !== e && "constructor" !== e && "prototype" !== e;
 };
 
@@ -39609,15 +39559,11 @@ function Be(e, t, n) {
 }
 
 function Me(e) {
-  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) {
-    n[r - 1] = arguments[r];
-  }
+  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) n[r - 1] = arguments[r];
 
   for (var o = 0, s = n; o < s.length; o++) {
     var i = s[o];
-    if (xe(i)) for (var a in i) {
-      Ve(a) && Be(e, i[a], a);
-    }
+    if (xe(i)) for (var a in i) Ve(a) && Be(e, i[a], a);
   }
 
   return e;
@@ -39637,10 +39583,10 @@ function Ge(e) {
 
       if (b(e)) {
         var n = e(t);
-        return "production" === "development" || null !== n && !Array.isArray(n) && "object" == _typeof(n) ? n : j(7);
+        return "production" === "development" || null !== n && !Array.isArray(n) && "object" == typeof n ? n : j(7);
       }
 
-      return Array.isArray(e) || "object" != _typeof(e) ? j(8) : t ? v({}, t, {}, e) : e;
+      return Array.isArray(e) || "object" != typeof e ? j(8) : t ? v({}, t, {}, e) : e;
     }(e.theme, t);
   }, [e.theme, t]);
   return e.children ? _react.default.createElement(ze.Provider, {
@@ -39676,7 +39622,7 @@ function Ye(e, t, n) {
   var C,
       I = new se(n, g, o ? e.componentStyle : void 0),
       P = I.isStatic && 0 === c.length,
-      O = function O(e, t) {
+      O = function (e, t) {
     return function (e, t, n, r) {
       var o = e.attrs,
           i = e.componentStyle,
@@ -39699,9 +39645,7 @@ function Ye(e, t, n) {
               s,
               i = e;
 
-          for (t in b(i) && (i = i(r)), i) {
-            r[t] = o[t] = "className" === t ? (n = o[t], s = i[t], n && s ? n + " " + s : n || s) : i[t];
-          }
+          for (t in b(i) && (i = i(r)), i) r[t] = o[t] = "className" === t ? (n = o[t], s = i[t], n && s ? n + " " + s : n || s) : i[t];
         }), [r, o];
       }(Oe(t, (0, _react.useContext)(ze), a) || E, t, o),
           y = f[0],
@@ -39718,9 +39662,7 @@ function Ye(e, t, n) {
           A = g !== t ? v({}, t, {}, g) : t,
           C = {};
 
-      for (var I in A) {
-        "$" !== I[0] && "as" !== I && ("forwardedAs" === I ? C.as = A[I] : (d ? d(I, _isPropValid.default) : !N || (0, _isPropValid.default)(I)) && (C[I] = A[I]));
-      }
+      for (var I in A) "$" !== I[0] && "as" !== I && ("forwardedAs" === I ? C.as = A[I] : (d ? d(I, _isPropValid.default) : !N || (0, _isPropValid.default)(I)) && (C[I] = A[I]));
 
       return t.style && g.style !== t.style && (C.style = v({}, t.style, {}, g.style)), C.className = Array.prototype.concat(c, h, S !== h ? S : null, t.className, g.className).filter(Boolean).join(" "), C.ref = w, (0, _react.createElement)(_, C);
     }(C, e, t, P);
@@ -39735,9 +39677,7 @@ function Ye(e, t, n) {
           o = {},
           s = Object.keys(e);
 
-      for (r = 0; r < s.length; r++) {
-        n = s[r], t.indexOf(n) >= 0 || (o[n] = e[n]);
-      }
+      for (r = 0; r < s.length; r++) n = s[r], t.indexOf(n) >= 0 || (o[n] = e[n]);
 
       return o;
     }(t, ["componentId"]),
@@ -39748,10 +39688,10 @@ function Ye(e, t, n) {
       componentId: s
     }), n);
   }, Object.defineProperty(C, "defaultProps", {
-    get: function get() {
+    get: function () {
       return this._foldedDefaultProps;
     },
-    set: function set(t) {
+    set: function (t) {
       this._foldedDefaultProps = o ? Me({}, e.defaultProps, t) : t;
     }
   }), "production" !== "development" && (Pe(f, g), C.warnTooManyClasses = function (e, t) {
@@ -39777,11 +39717,11 @@ function Ye(e, t, n) {
   }), C;
 }
 
-var qe = function qe(e) {
+var qe = function (e) {
   return function e(t, r, o) {
     if (void 0 === o && (o = E), !(0, _reactIs.isValidElementType)(r)) return j(1, String(r));
 
-    var s = function s() {
+    var s = function () {
       return t(r, o, Ae.apply(void 0, arguments));
     };
 
@@ -39817,9 +39757,7 @@ var He = function () {
 }();
 
 function $e(e) {
-  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), o = 1; o < t; o++) {
-    n[o - 1] = arguments[o];
-  }
+  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), o = 1; o < t; o++) n[o - 1] = arguments[o];
 
   var i = Ae.apply(void 0, [e].concat(n)),
       a = "sc-global-" + Te(JSON.stringify(i)),
@@ -39854,9 +39792,7 @@ function $e(e) {
 function We(e) {
   "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
 
-  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) {
-    n[r - 1] = arguments[r];
-  }
+  for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++) n[r - 1] = arguments[r];
 
   var o = Ae.apply(void 0, [e].concat(n)).join(""),
       s = Te(o);
@@ -39898,7 +39834,7 @@ var Ue = function () {
     return j(3);
   }, e;
 }(),
-    Je = function Je(e) {
+    Je = function (e) {
   var t = _react.default.forwardRef(function (t, n) {
     var o = (0, _react.useContext)(ze),
         i = e.defaultProps,
@@ -39911,7 +39847,7 @@ var Ue = function () {
 
   return (0, _hoistNonReactStatics.default)(t, e), t.displayName = "WithTheme(" + _(e) + ")", t;
 },
-    Xe = function Xe() {
+    Xe = function () {
   return (0, _react.useContext)(ze);
 },
     Ze = {
@@ -39938,34 +39874,16 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n color: white;\n margin-inline-start: 2rem;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n background-color: black;\n display: flex;\n justify-content: space-between;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Head = _styledComponents.default.div(_templateObject());
-
+const Head = _styledComponents.default.div`
+ background-color: black;
+ display: flex;
+ justify-content: space-between;
+`;
 exports.Head = Head;
-
-var Title = _styledComponents.default.h1(_templateObject2());
-
+const Title = _styledComponents.default.h1`
+ color: white;
+ margin-inline-start: 2rem;
+`;
 exports.Title = Title;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
@@ -39985,26 +39903,45 @@ var _Style = require("../Style");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  color: gray;\n  text-decoration: none;\n  margin-inline-end: 2rem;\n  margin-top: 2rem;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)(_templateObject());
+const Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)`
+  color: gray;
+  text-decoration: none;
+  margin-inline-end: 2rem;
+  margin-top: 2rem;
+`;
 
 function Header() {
   return /*#__PURE__*/_react.default.createElement(_Style.Head, null, /*#__PURE__*/_react.default.createElement(_Style.Title, null, "Mahanoro Station"), /*#__PURE__*/_react.default.createElement(Linksto, {
     to: "/"
   }, "My account"));
 }
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js"}],"src/components/PlaceDestination.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js"}],"src/actions/PlacesDestinationAction.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Places = Places;
+
+// export function Places() {
+//     return async (dispatch) => {
+//       const response = await fetch(
+//         `https://gist.githubusercontent.com/Pinois/36bb5fbf9b6a686f0baf4006dd137bca/raw/a40d8b3f696a75f388db286d57bdd05a925fa0e7/trips.json`
+//       );
+//       const places = await response.json();
+//       dispatch({
+//         type: "SOME_PLACES",
+//         payload: places,
+//       });
+//     };
+// }
+function Places(place) {
+  return {
+    type: "SOME_PLACES",
+    payload: place
+  };
+}
+},{}],"src/components/PlaceDestination.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40012,27 +39949,39 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _reactRedux = require("react-redux");
 
 var _reactRouterDom = require("react-router-dom");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _PlacesDestinationAction = require("../actions/PlacesDestinationAction");
 
-function WhereThePlace(state) {
-  var places = (0, _reactRedux.useSelector)(function (state) {
-    return state.places;
-  });
-  console.log(places);
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function WhereThePlace({
+  place
+}) {
+  const places = (0, _reactRedux.useSelector)(state => state.places);
+
+  function placespossible() {
+    const placelist = places.map(place => /*#__PURE__*/_react.default.createElement("div", {
+      place: place
+    }, place.destination));
+    console.log(place);
+    return placelist;
+  }
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, state.destination));
+  }, placespossible));
 }
 
 var _default = WhereThePlace;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../actions/PlacesDestinationAction":"src/actions/PlacesDestinationAction.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40104,7 +40053,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60686" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55216" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,15 +1,20 @@
-export function placesStation(state=[], action) {
+export default function place(state=[], action) {
   switch (action.type) {
       case 'SOME_PLACES': {
-          const existplace = state.map((place) => {
-           return [...place, action.payload] 
-          })
+         const somePlace = state.map((place) => {
 
-          return existplace
-      }
-  
-      default:
-          return state;
-  }
+    return {
+      ...place,
+    }
+});
+    return somePlace;
 }
+
+default :
+   return state
+
+}
+
+}
+
 

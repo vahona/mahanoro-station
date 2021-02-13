@@ -1,6 +1,6 @@
 export default {
 
-places: [
+places : [
   {
     id: 0,
     destination: "Antananarivo",
@@ -1874,5 +1874,4 @@ places: [
     ],
   },
 ]
-
-}
+};
