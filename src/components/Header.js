@@ -5,7 +5,7 @@ import { Head, Title } from "../Style";
 
 
 const Linksto = styled(Link)`
-  color: gray;
+  color: #d3d3d3;
   text-decoration: none;
   margin-inline-end: 2rem;
   margin-top: 2rem;

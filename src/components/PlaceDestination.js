@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {Button, ContainerButton} from "../Style"
+import { Button, ContainerButton, WhereToGo } from "../Style";
 import  {Places} from '../actions/PlacesDestinationAction'
 
 import { FcFactory } from "react-icons/fc";
+
+import { AiFillCar } from "react-icons/ai";
 
 
 
@@ -23,6 +25,7 @@ function placespossible() {
 
   return (
     <>
+      <WhereToGo><AiFillCar className="car"/>Where are you going</WhereToGo>
       <ContainerButton>
         <Link to="/">
           <Button>

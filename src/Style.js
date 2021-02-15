@@ -11,6 +11,13 @@ export const Title = styled.h1`
  margin-inline-start: 2rem;
 `
 
+export const WhereToGo = styled.h1`
+  .car {
+    color: #ff8c00;
+    margin-right: 1rem;
+  }
+`;
+
 export const Container = styled.section`
   display: flex;
 `
