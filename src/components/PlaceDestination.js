@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {Button, ContainerButton} from "../Style"
 import  {Places} from '../actions/PlacesDestinationAction'
+
+import { FcFactory } from "react-icons/fc";
+
+
 
 
 function WhereThePlace({place} ) {
@@ -18,18 +23,33 @@ function placespossible() {
 
   return (
     <>
-      <Link to="/">
-        <button>{placespossible}</button>
-      </Link>
-      <Link to="/">
-        <button>Toamasin</button>
-      </Link>
-      <Link to="/">
-        <button>Vatomandry</button>
-      </Link>
-      <Link to="/">
-        <button>Moramanga</button>
-      </Link>
+      <ContainerButton>
+        <Link to="/">
+          <Button>
+            <FcFactory className="town" />
+            Tananarivo
+          </Button>
+        </Link>
+        <Link to="/">
+          <Button>
+            <FcFactory className="town" />
+            Toamasin
+          </Button>
+        </Link>
+        <Link to="/">
+          <Button>
+            {" "}
+            <FcFactory className="town" />
+            Vatomandry
+          </Button>
+        </Link>
+        <Link to="/">
+          <Button>
+            <FcFactory className="town" />
+            Moramanga
+          </Button>
+        </Link>
+      </ContainerButton>
     </>
   );
 }

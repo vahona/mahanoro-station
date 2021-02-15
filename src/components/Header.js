@@ -9,6 +9,7 @@ const Linksto = styled(Link)`
   text-decoration: none;
   margin-inline-end: 2rem;
   margin-top: 2rem;
+  cursor: pointer;
 `;
 
 export default function Header() {
