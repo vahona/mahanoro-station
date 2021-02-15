@@ -11,3 +11,15 @@ export const Title = styled.h1`
  margin-inline-start: 2rem;
 `
 
+export const Container = styled.section`
+  display: flex;
+`
+
+export const SubContainer = styled.section`
+  display: flex;
+`;
+
+export const Content = styled.section`
+  margin-right: 2rem
+`;
+

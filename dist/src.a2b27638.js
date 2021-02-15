@@ -39868,7 +39868,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Title = exports.Head = void 0;
+exports.Content = exports.SubContainer = exports.Container = exports.Title = exports.Head = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -39885,6 +39885,18 @@ const Title = _styledComponents.default.h1`
  margin-inline-start: 2rem;
 `;
 exports.Title = Title;
+const Container = _styledComponents.default.section`
+  display: flex;
+`;
+exports.Container = Container;
+const SubContainer = _styledComponents.default.section`
+  display: flex;
+`;
+exports.SubContainer = SubContainer;
+const Content = _styledComponents.default.section`
+  margin-right: 2rem
+`;
+exports.Content = Content;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -39912,7 +39924,7 @@ const Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)`
 
 function Header() {
   return /*#__PURE__*/_react.default.createElement(_Style.Head, null, /*#__PURE__*/_react.default.createElement(_Style.Title, null, "Mahanoro Station"), /*#__PURE__*/_react.default.createElement(Linksto, {
-    to: "/"
+    to: "/Profileaccount"
   }, "My account"));
 }
 },{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js"}],"src/actions/PlacesDestinationAction.js":[function(require,module,exports) {
@@ -39965,8 +39977,10 @@ function WhereThePlace({
   place
 }) {
   const places = (0, _reactRedux.useSelector)(state => state.places);
+  console.log(places);
 
   function placespossible() {
+    if (!places) return;
     const placelist = places.map(place => /*#__PURE__*/_react.default.createElement("div", {
       place: place
     }, place.destination));
@@ -39976,12 +39990,47 @@ function WhereThePlace({
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, placespossible));
+  }, /*#__PURE__*/_react.default.createElement("button", null, placespossible)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("button", null, "Toamasin")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("button", null, "Vatomandry")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("button", null, "Moramanga")));
 }
 
 var _default = WhereThePlace;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../actions/PlacesDestinationAction":"src/actions/PlacesDestinationAction.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../actions/PlacesDestinationAction":"src/actions/PlacesDestinationAction.js"}],"src/components/Profileaccount.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Style = require("../Style");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Profileaccount() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "My account"), /*#__PURE__*/_react.default.createElement("h4", null, "Name"), /*#__PURE__*/_react.default.createElement(_Style.Container, null, /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement("h3", null, "My personal information"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("labe", null, "First name", /*#__PURE__*/_react.default.createElement("input", {
+    placeholder: "name",
+    type: "text"
+  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("labe", null, "Last name", /*#__PURE__*/_react.default.createElement("input", {
+    placeholder: "name",
+    type: "text"
+  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("labe", null, "Phone Number", /*#__PURE__*/_react.default.createElement("input", {
+    placeholder: "name",
+    type: "text"
+  }))), /*#__PURE__*/_react.default.createElement("button", null, "Update"))), /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement("h2", null, "My bookings"), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement(_Style.Content, null, "place and date"), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "number of seat and price"), /*#__PURE__*/_react.default.createElement("button", null, "cancel")))));
+}
+
+var _default = Profileaccount;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../Style":"src/Style.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39997,15 +40046,20 @@ var _Header = _interopRequireDefault(require("./components/Header"));
 
 var _PlaceDestination = _interopRequireDefault(require("./components/PlaceDestination"));
 
+var _Profileaccount = _interopRequireDefault(require("./components/Profileaccount"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
-  }, /*#__PURE__*/_react.default.createElement(_PlaceDestination.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_PlaceDestination.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/profileaccount"
+  }, /*#__PURE__*/_react.default.createElement(_Profileaccount.default, null))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Header":"src/components/Header.js","./components/PlaceDestination":"src/components/PlaceDestination.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Header":"src/components/Header.js","./components/PlaceDestination":"src/components/PlaceDestination.js","./components/Profileaccount":"src/components/Profileaccount.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -40053,7 +40107,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55216" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57769" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

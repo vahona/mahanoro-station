@@ -15,7 +15,7 @@ export default function Header() {
     return (
         <Head>
             <Title>Mahanoro Station</Title>
-           <Linksto to="/">My account</Linksto>
+           <Linksto to="/Profileaccount">My account</Linksto>
         </Head>
     )
 }
