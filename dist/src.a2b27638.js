@@ -39873,7 +39873,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.Head = void 0;
+exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.Head = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -39928,6 +39928,40 @@ const ContainerButton = _styledComponents.default.div`
   columns: 2;
 `;
 exports.ContainerButton = ContainerButton;
+const IconContainer = _styledComponents.default.div`
+  .clock {
+    width: 10rem;
+  }
+`;
+exports.IconContainer = IconContainer;
+const SubContainers = _styledComponents.default.div`
+  display: flex;
+  justify-content: space-between;
+`;
+exports.SubContainers = SubContainers;
+const ButtonBook = _styledComponents.default.button`
+  margin-bottom: 2rem;
+  background-color: #e53170;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-inline-end: 1rem;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 22px;
+`;
+exports.ButtonBook = ButtonBook;
+const SmallContainer = _styledComponents.default.div`
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+`;
+exports.SmallContainer = SmallContainer;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -75654,9 +75688,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function WhereThePlace({
-  place
-}) {
+function WhereThePlace(place) {
   const places = (0, _reactRedux.useSelector)(state => state.places);
   console.log(places);
 
@@ -75670,23 +75702,28 @@ function WhereThePlace({
   }
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.WhereToGo, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
-    className: "car"
+    className: "car",
+    size: "100px"
   }), "Where are you going"), /*#__PURE__*/_react.default.createElement(_Style.ContainerButton, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
+    to: "/NextTripToGo"
   }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town"
+    className: "town",
+    size: "30px"
   }), "Tananarivo")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town"
+    className: "town",
+    size: "30px"
   }), "Toamasin")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, " ", /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town"
+    className: "town",
+    size: "30px"
   }), "Vatomandry")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town"
+    className: "town",
+    size: "30px"
   }), "Moramanga"))));
 }
 
@@ -75721,7 +75758,48 @@ function Profileaccount() {
 
 var _default = Profileaccount;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Style":"src/Style.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Style":"src/Style.js"}],"src/components/NextTripToGo.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _fc = require("react-icons/fc");
+
+var _Style = require("../Style");
+
+var _ai = require("react-icons/ai");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const date = new Date().toDateString();
+const newDate = new Date();
+const tomorrow = newDate.setDate(new Date().getDate() + 1);
+const thirdDay = tomorrow + 1;
+
+function NextTripToGo() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SmallContainer, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_fc.FcAlarmClock, {
+    className: "clock",
+    size: "80px"
+  })), /*#__PURE__*/_react.default.createElement("h2", null, "Next trips to:")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
+    size: "80px",
+    color: "orange"
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, date), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
+    size: "80px",
+    color: "orange"
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, tomorrow), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
+    size: "80px",
+    color: "orange"
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, thirdDay), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat")));
+}
+
+var _default = NextTripToGo;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","../Style":"src/Style.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75739,6 +75817,8 @@ var _PlaceDestination = _interopRequireDefault(require("./components/PlaceDestin
 
 var _Profileaccount = _interopRequireDefault(require("./components/Profileaccount"));
 
+var _NextTripToGo = _interopRequireDefault(require("./components/NextTripToGo"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
@@ -75748,9 +75828,12 @@ function App() {
   }, /*#__PURE__*/_react.default.createElement(_PlaceDestination.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/profileaccount"
-  }, /*#__PURE__*/_react.default.createElement(_Profileaccount.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_Profileaccount.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/NextTripToGo"
+  }, /*#__PURE__*/_react.default.createElement(_NextTripToGo.default, null))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Header":"src/components/Header.js","./components/PlaceDestination":"src/components/PlaceDestination.js","./components/Profileaccount":"src/components/Profileaccount.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Header":"src/components/Header.js","./components/PlaceDestination":"src/components/PlaceDestination.js","./components/Profileaccount":"src/components/Profileaccount.js","./components/NextTripToGo":"src/components/NextTripToGo.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -75798,7 +75881,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57769" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56924" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

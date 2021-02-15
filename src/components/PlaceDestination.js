@@ -11,7 +11,7 @@ import { AiFillCar } from "react-icons/ai";
 
 
 
-function WhereThePlace({place} ) {
+function WhereThePlace(place ) {
     	const places = useSelector((state) => state.places);
       console.log(places);
 
@@ -25,30 +25,33 @@ function placespossible() {
 
   return (
     <>
-      <WhereToGo><AiFillCar className="car"/>Where are you going</WhereToGo>
+      <WhereToGo>
+        <AiFillCar className="car" size="100px" />
+        Where are you going
+      </WhereToGo>
       <ContainerButton>
-        <Link to="/">
+        <Link to="/NextTripToGo">
           <Button>
-            <FcFactory className="town" />
+            <FcFactory className="town" size="30px" />
             Tananarivo
           </Button>
         </Link>
         <Link to="/">
           <Button>
-            <FcFactory className="town" />
+            <FcFactory className="town" size="30px" />
             Toamasin
           </Button>
         </Link>
         <Link to="/">
           <Button>
             {" "}
-            <FcFactory className="town" />
+            <FcFactory className="town" size="30px" />
             Vatomandry
           </Button>
         </Link>
         <Link to="/">
           <Button>
-            <FcFactory className="town" />
+            <FcFactory className="town" size="30px" />
             Moramanga
           </Button>
         </Link>

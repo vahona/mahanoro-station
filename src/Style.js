@@ -49,3 +49,37 @@ export const ContainerButton = styled.div`
   columns: 2;
 `
 
+export const IconContainer = styled.div`
+  .clock {
+    width: 10rem;
+  }
+`
+
+export const SubContainers = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const ButtonBook = styled.button`
+  margin-bottom: 2rem;
+  background-color: #e53170;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-inline-end: 1rem;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 22px;
+`;
+
+export const SmallContainer = styled.div`
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+`;
+
