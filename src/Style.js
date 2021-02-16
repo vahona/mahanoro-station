@@ -66,12 +66,14 @@ export const ButtonBook = styled.button`
   border: none;
   cursor: pointer;
   color: white;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin-inline-end: 1rem;
   font-family: Roboto;
   font-weight: 500;
   font-size: 22px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
 
 export const SmallContainer = styled.div`
@@ -83,3 +85,33 @@ export const SmallContainer = styled.div`
   margin-top: 2rem;
 `;
 
+export const SectionContainer = styled.section`
+  display: flex;
+  justify-content: space-between;
+  margin-inline-start: 2rem;
+  margin-inline-end: 2rem;
+`
+
+export const List = styled.li`
+ display: flex;
+ justify-content: space-between;
+`
+
+export const UlList = styled.ul`
+  padding-left: 0;
+  margin-left: -5rem;
+`
+
+export const SecondTitle = styled.h1`
+  font-size: 40px;
+`
+
+export const BookSeatButton = styled.button`
+  background-color: #e53170;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: none
+`;

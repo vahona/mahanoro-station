@@ -39873,7 +39873,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.Head = void 0;
+exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.Head = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -39945,12 +39945,14 @@ const ButtonBook = _styledComponents.default.button`
   border: none;
   cursor: pointer;
   color: white;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin-inline-end: 1rem;
   font-family: Roboto;
   font-weight: 500;
   font-size: 22px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
 exports.ButtonBook = ButtonBook;
 const SmallContainer = _styledComponents.default.div`
@@ -39962,7 +39964,40 @@ const SmallContainer = _styledComponents.default.div`
   margin-top: 2rem;
 `;
 exports.SmallContainer = SmallContainer;
-},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Header.js":[function(require,module,exports) {
+const SectionContainer = _styledComponents.default.section`
+  display: flex;
+  justify-content: space-between;
+  margin-inline-start: 2rem;
+  margin-inline-end: 2rem;
+`;
+exports.SectionContainer = SectionContainer;
+const List = _styledComponents.default.li`
+ display: flex;
+ justify-content: space-between;
+`;
+exports.List = List;
+const UlList = _styledComponents.default.ul`
+  padding-left: 0;
+  margin-left: -5rem;
+`;
+exports.UlList = UlList;
+const SecondTitle = _styledComponents.default.h1`
+  font-size: 40px;
+`;
+exports.SecondTitle = SecondTitle;
+const BookSeatButton = _styledComponents.default.button`
+  background-color: #e53170;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: none
+`;
+exports.BookSeatButton = BookSeatButton;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/images/Vector.svg":[function(require,module,exports) {
+module.exports = "/Vector.0e47b7f0.svg";
+},{}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39978,6 +40013,8 @@ var _reactRouterDom = require("react-router-dom");
 
 var _Style = require("../Style");
 
+var _Vector = _interopRequireDefault(require("../images/Vector.svg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)`
@@ -39989,11 +40026,14 @@ const Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)`
 `;
 
 function Header() {
-  return /*#__PURE__*/_react.default.createElement(_Style.Head, null, /*#__PURE__*/_react.default.createElement(_Style.Title, null, "Mahanoro Station"), /*#__PURE__*/_react.default.createElement(Linksto, {
+  return /*#__PURE__*/_react.default.createElement(_Style.Head, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _Vector.default,
+    alt: "car"
+  }), /*#__PURE__*/_react.default.createElement(_Style.Title, null, "Mahanoro Station"), /*#__PURE__*/_react.default.createElement(Linksto, {
     to: "/Profileaccount"
   }, "My account"));
 }
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js"}],"src/actions/PlacesDestinationAction.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js","../images/Vector.svg":"src/images/Vector.svg"}],"src/actions/PlacesDestinationAction.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75758,7 +75798,11 @@ function Profileaccount() {
 
 var _default = Profileaccount;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Style":"src/Style.js"}],"src/components/NextTripToGo.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Style":"src/Style.js"}],"src/images/twemoji_alarm-clock.svg":[function(require,module,exports) {
+module.exports = "/twemoji_alarm-clock.ee7dea60.svg";
+},{}],"src/images/noto-v1_bus.svg":[function(require,module,exports) {
+module.exports = "/noto-v1_bus.ec3e818a.svg";
+},{}],"src/components/NextTripToGo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75768,7 +75812,59 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 var _fc = require("react-icons/fc");
+
+var _Style = require("../Style");
+
+var _ai = require("react-icons/ai");
+
+var _twemoji_alarmClock = _interopRequireDefault(require("../images/twemoji_alarm-clock.svg"));
+
+var _notoV1_bus = _interopRequireDefault(require("../images/noto-v1_bus.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)`
+  cursor: pointer;
+`;
+const date = new Date().toDateString();
+const newDate = new Date();
+const tomorrow = newDate.setDate(new Date().getDate() + 1);
+const thirdDay = tomorrow + 1;
+
+function NextTripToGo() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SmallContainer, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _twemoji_alarmClock.default
+  })), /*#__PURE__*/_react.default.createElement("h2", null, "Next trips to:")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, date), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
+    to: "/SeatsBook"
+  }, /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat"))), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, tomorrow), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
+    to: "/SeatsBook"
+  }, /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat"))), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, thirdDay), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
+    to: "/SeatsBook"
+  }, /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, " Book a seat "))));
+}
+
+var _default = NextTripToGo;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","../Style":"src/Style.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js","../images/twemoji_alarm-clock.svg":"src/images/twemoji_alarm-clock.svg","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg"}],"src/components/SeatsBook.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
 
 var _Style = require("../Style");
 
@@ -75776,30 +75872,16 @@ var _ai = require("react-icons/ai");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const date = new Date().toDateString();
-const newDate = new Date();
-const tomorrow = newDate.setDate(new Date().getDate() + 1);
-const thirdDay = tomorrow + 1;
-
-function NextTripToGo() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SmallContainer, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_fc.FcAlarmClock, {
-    className: "clock",
-    size: "80px"
-  })), /*#__PURE__*/_react.default.createElement("h2", null, "Next trips to:")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
-    size: "80px",
-    color: "orange"
-  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, date), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
-    size: "80px",
-    color: "orange"
-  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, tomorrow), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
-    size: "80px",
-    color: "orange"
-  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, thirdDay), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat")));
+function SeatsBook() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SectionContainer, null, /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
+    color: "orange",
+    size: "100px"
+  }), /*#__PURE__*/_react.default.createElement("h2", null, "Pick a seat")), /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_Style.SecondTitle, null, " Book a seat to: "), /*#__PURE__*/_react.default.createElement("h3", null, "Trip information"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.UlList, null, /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Departure Time:"), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver's contact: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Estimated duration: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Breakes: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")))), /*#__PURE__*/_react.default.createElement("div", null, "10000AR/seat"), /*#__PURE__*/_react.default.createElement(_Style.BookSeatButton, null, "Book .. seat"), /*#__PURE__*/_react.default.createElement("div", null, "Total: "))));
 }
 
-var _default = NextTripToGo;
+var _default = SeatsBook;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","../Style":"src/Style.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Style":"src/Style.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75819,10 +75901,14 @@ var _Profileaccount = _interopRequireDefault(require("./components/Profileaccoun
 
 var _NextTripToGo = _interopRequireDefault(require("./components/NextTripToGo"));
 
+var _SeatsBook = _interopRequireDefault(require("./components/SeatsBook"));
+
+require("./Style");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_PlaceDestination.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
@@ -75831,9 +75917,12 @@ function App() {
   }, /*#__PURE__*/_react.default.createElement(_Profileaccount.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/NextTripToGo"
-  }, /*#__PURE__*/_react.default.createElement(_NextTripToGo.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_NextTripToGo.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/SeatsBook"
+  }, /*#__PURE__*/_react.default.createElement(_SeatsBook.default, null))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Header":"src/components/Header.js","./components/PlaceDestination":"src/components/PlaceDestination.js","./components/Profileaccount":"src/components/Profileaccount.js","./components/NextTripToGo":"src/components/NextTripToGo.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Header":"src/components/Header.js","./components/PlaceDestination":"src/components/PlaceDestination.js","./components/Profileaccount":"src/components/Profileaccount.js","./components/NextTripToGo":"src/components/NextTripToGo.js","./components/SeatsBook":"src/components/SeatsBook.js","./Style":"src/Style.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -75881,7 +75970,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56924" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62592" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

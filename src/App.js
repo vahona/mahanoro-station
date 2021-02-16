@@ -4,10 +4,13 @@ import Header from './components/Header'
 import WhereThePlace from './components/PlaceDestination'
 import Profileaccount from './components/Profileaccount'
 import NextTripToGo from './components/NextTripToGo'
+import SeatsBook from './components/SeatsBook'
+
+import {} from './Style'
 
 export default function App() {
     return (
-      <>
+      <div>
         <Header />
         <Switch>
           <Route exact path="/">
@@ -19,7 +22,10 @@ export default function App() {
           <Route exact path="/NextTripToGo">
             <NextTripToGo />
           </Route>
+          <Route exact path="/SeatsBook">
+            <SeatsBook />
+          </Route>
         </Switch>
-      </>
+      </div>
     );
 }
