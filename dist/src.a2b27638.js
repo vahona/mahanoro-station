@@ -39873,7 +39873,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Image1 = exports.Article = exports.BigContainer = exports.CancelButton = exports.UpdateButton = exports.Input = exports.SubForm = exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.HeadImage = exports.Head = exports.Conatiner = void 0;
+exports.ButtonChair = exports.CarImage = exports.AccountHeader = exports.Image1 = exports.Article = exports.BigContainer = exports.CancelButton = exports.UpdateButton = exports.Input = exports.SubForm = exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.HeadImage = exports.Head = exports.Conatiner = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -40033,7 +40033,10 @@ const Input = _styledComponents.default.input`
   padding-right: 40%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-
+  &::placeholder {
+    color: #ff8906;
+    font-family: Rubik;
+  }
 `;
 exports.Input = Input;
 const UpdateButton = _styledComponents.default.button`
@@ -40041,8 +40044,8 @@ const UpdateButton = _styledComponents.default.button`
   background-color: #e53170;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   color: white;
   cursor: pointer;
   margin-inline-start: 100%;
@@ -40074,6 +40077,21 @@ const Image1 = _styledComponents.default.img`
   margin-inline-start: 90%;
 `;
 exports.Image1 = Image1;
+const AccountHeader = _styledComponents.default.h1`
+  font-size: 40px;
+`;
+exports.AccountHeader = AccountHeader;
+const CarImage = _styledComponents.default.img`
+  margin-inline-start: 50%;
+  margin-top: 2rem;
+`;
+exports.CarImage = CarImage;
+const ButtonChair = _styledComponents.default.button`
+  border: none;
+  background-color: white;
+  cursor: pointer;
+`;
+exports.ButtonChair = ButtonChair;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/images/Vector.svg":[function(require,module,exports) {
 module.exports = "/Vector.0e47b7f0.svg";
 },{}],"src/components/Header.js":[function(require,module,exports) {
@@ -75890,7 +75908,7 @@ function Profileaccount() {
   }))), /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("labe", null, /*#__PURE__*/_react.default.createElement("div", null, "Phone Number"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
     placeholder: "name",
     type: "text"
-  }))), /*#__PURE__*/_react.default.createElement(_Style.UpdateButton, null, "Update"))), /*#__PURE__*/_react.default.createElement(_Style.Article, null, /*#__PURE__*/_react.default.createElement("h1", null, "My account"), /*#__PURE__*/_react.default.createElement("h4", null, "Name"), /*#__PURE__*/_react.default.createElement("h2", null, "My bookings"), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement(_Style.UpdateButton, null, "Update"))), /*#__PURE__*/_react.default.createElement(_Style.Article, null, /*#__PURE__*/_react.default.createElement(_Style.AccountHeader, null, "My account"), /*#__PURE__*/_react.default.createElement("h4", null, "Name"), /*#__PURE__*/_react.default.createElement("h2", null, "My bookings"), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _notoV1_bus.default,
     alt: "car"
   }), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "place and date"), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "number of seat and price"), /*#__PURE__*/_react.default.createElement(_Style.CancelButton, null, "cancel")), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
@@ -75984,63 +76002,63 @@ var _emojione_seat = _interopRequireDefault(require("../images/emojione_seat.svg
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SeatsBook() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SectionContainer, null, /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SectionContainer, null, /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_Style.CarImage, {
     src: _notoV1_bus.default
-  }), /*#__PURE__*/_react.default.createElement("h2", null, "Pick a seat"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.ListSeat, null, /*#__PURE__*/_react.default.createElement("li", null, "\xA0"), /*#__PURE__*/_react.default.createElement("li", null, "\xA0"), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }), /*#__PURE__*/_react.default.createElement("h2", null, "Pick a seat"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.ListSeat, null, /*#__PURE__*/_react.default.createElement("li", null, "\xA0"), /*#__PURE__*/_react.default.createElement("li", null, "\xA0"), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, " ", /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }), " ")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_Style.ButtonChair, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _emojione_seat.default,
     alt: "seat"
-  }))))), /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_Style.SecondTitle, null, " Book a seat to: "), /*#__PURE__*/_react.default.createElement("h3", null, "Trip information"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.UlList, null, /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Departure Time:"), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver's contact: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Estimated duration: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Breakes: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")))), /*#__PURE__*/_react.default.createElement("div", null, "10000AR/seat"), /*#__PURE__*/_react.default.createElement(_Style.BookSeatButton, null, "Book .. seat"), /*#__PURE__*/_react.default.createElement("div", null, "Total: "))));
+  })))))), /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_Style.SecondTitle, null, " Book a seat to: "), /*#__PURE__*/_react.default.createElement("h3", null, "Trip information"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.UlList, null, /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Departure Time:"), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver's contact: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Estimated duration: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Breakes: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")))), /*#__PURE__*/_react.default.createElement("div", null, "10000AR/seat"), /*#__PURE__*/_react.default.createElement(_Style.BookSeatButton, null, "Book .. seat"), /*#__PURE__*/_react.default.createElement("div", null, "Total: "))));
 }
 
 var _default = SeatsBook;

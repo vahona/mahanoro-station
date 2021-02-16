@@ -15,6 +15,7 @@ import {
   BigContainer,
   Article,
   Image1,
+  AccountHeader,
 } from "../Style";
 
 
@@ -49,7 +50,7 @@ function Profileaccount() {
             </form>
           </Article>
           <Article>
-            <h1>My account</h1>
+            <AccountHeader>My account</AccountHeader>
             <h4>Name</h4>
             <h2>My bookings</h2>
             <SubContainer>

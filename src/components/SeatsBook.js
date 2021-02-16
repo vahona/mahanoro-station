@@ -7,6 +7,8 @@ import {
   BookSeatButton,
   ListsSeats,
   ListSeat,
+  CarImage,
+  ButtonChair,
 } from "../Style";
 import BigCar from "../images/noto-v1_bus.svg";
 import Seat from '../images/emojione_seat.svg'
@@ -16,65 +18,102 @@ function SeatsBook() {
       <>
         <SectionContainer>
           <article>
-            <img src={BigCar} />
+            <CarImage src={BigCar} />
             <h2>Pick a seat</h2>
             <nav>
               <ListSeat>
                 <li>&nbsp;</li>
                 <li>&nbsp;</li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    {" "}
+                    <img src={Seat} alt="seat" />{" "}
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
                 <li>
-                  <img src={Seat} alt="seat" />
+                  <ButtonChair>
+                    <img src={Seat} alt="seat" />
+                  </ButtonChair>
                 </li>
               </ListSeat>
             </nav>

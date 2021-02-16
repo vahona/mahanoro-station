@@ -155,16 +155,19 @@ export const Input = styled.input`
   padding-right: 40%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-
-`
+  &::placeholder {
+    color: #ff8906;
+    font-family: Rubik;
+  }
+`;
 
 export const UpdateButton = styled.button`
   border: none;
   background-color: #e53170;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   color: white;
   cursor: pointer;
   margin-inline-start: 100%;
@@ -194,4 +197,18 @@ export const Article = styled.article`
 
 export const Image1 = styled.img`
   margin-inline-start: 90%;
+`
+
+export const AccountHeader = styled.h1`
+  font-size: 40px;
+`
+
+export const CarImage = styled.img`
+  margin-inline-start: 50%;
+  margin-top: 2rem;
+`
+export const ButtonChair = styled.button`
+  border: none;
+  background-color: white;
+  cursor: pointer;
 `
