@@ -5,17 +5,79 @@ import {
   UlList,
   SecondTitle,
   BookSeatButton,
+  ListsSeats,
+  ListSeat,
 } from "../Style";
-import { AiFillCar } from "react-icons/ai";
+import BigCar from "../images/noto-v1_bus.svg";
+import Seat from '../images/emojione_seat.svg'
 
 function SeatsBook() {
     return (
       <>
         <SectionContainer>
           <article>
-              <AiFillCar color="orange" size="100px"/>
+            <img src={BigCar} />
             <h2>Pick a seat</h2>
-
+            <nav>
+              <ListSeat>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+                <li>
+                  <img src={Seat} alt="seat" />
+                </li>
+              </ListSeat>
+            </nav>
           </article>
           <article>
             <SecondTitle> Book a seat to: </SecondTitle>

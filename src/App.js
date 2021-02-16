@@ -6,11 +6,11 @@ import Profileaccount from './components/Profileaccount'
 import NextTripToGo from './components/NextTripToGo'
 import SeatsBook from './components/SeatsBook'
 
-import {} from './Style'
+import { Conatiner } from "./Style";
 
 export default function App() {
     return (
-      <div>
+      <Conatiner>
         <Header />
         <Switch>
           <Route exact path="/">
@@ -26,6 +26,6 @@ export default function App() {
             <SeatsBook />
           </Route>
         </Switch>
-      </div>
+      </Conatiner>
     );
 }

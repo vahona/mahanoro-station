@@ -8,6 +8,9 @@ import { FcFactory } from "react-icons/fc";
 
 import { AiFillCar } from "react-icons/ai";
 
+import Town from "../images/Town.svg"
+import BigCar from '../images/noto-v1_bus.svg'
+
 
 
 
@@ -26,32 +29,32 @@ function placespossible() {
   return (
     <>
       <WhereToGo>
-        <AiFillCar className="car" size="100px" />
+        <img src={BigCar} />
         Where are you going
       </WhereToGo>
       <ContainerButton>
         <Link to="/NextTripToGo">
           <Button>
-            <FcFactory className="town" size="30px" />
+            <img src={Town} alt="town" />
             Tananarivo
           </Button>
         </Link>
         <Link to="/">
           <Button>
-            <FcFactory className="town" size="30px" />
+            <img src={Town} alt="town" />
             Toamasin
           </Button>
         </Link>
         <Link to="/">
           <Button>
             {" "}
-            <FcFactory className="town" size="30px" />
+            <img src={Town} alt="town" />
             Vatomandry
           </Button>
         </Link>
         <Link to="/">
           <Button>
-            <FcFactory className="town" size="30px" />
+            <img src={Town} alt="town" />
             Moramanga
           </Button>
         </Link>

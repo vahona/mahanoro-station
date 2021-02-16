@@ -39873,12 +39873,16 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.Head = void 0;
+exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.Head = exports.Conatiner = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const Conatiner = _styledComponents.default.div`
+  font-family: Rubik
+`;
+exports.Conatiner = Conatiner;
 const Head = _styledComponents.default.div`
  background-color: black;
  display: flex;
@@ -39965,7 +39969,13 @@ const SmallContainer = _styledComponents.default.div`
 `;
 exports.SmallContainer = SmallContainer;
 const SectionContainer = _styledComponents.default.section`
-  display: flex;
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-column-gap: 1rem;
+    font-family: Rubik
+  }
+
   justify-content: space-between;
   margin-inline-start: 2rem;
   margin-inline-end: 2rem;
@@ -39978,8 +39988,7 @@ const List = _styledComponents.default.li`
 exports.List = List;
 const UlList = _styledComponents.default.ul`
   padding-left: 0;
-  margin-left: -5rem;
-`;
+ `;
 exports.UlList = UlList;
 const SecondTitle = _styledComponents.default.h1`
   font-size: 40px;
@@ -39992,9 +40001,20 @@ const BookSeatButton = _styledComponents.default.button`
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border: none
+  border: none;
 `;
 exports.BookSeatButton = BookSeatButton;
+const ListSeat = _styledComponents.default.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-column-gap: 1rem;
+  list-style: none;
+`;
+exports.ListSeat = ListSeat;
+const ListsSeats = _styledComponents.default.li`
+ 
+`;
+exports.ListsSeats = ListsSeats;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/images/Vector.svg":[function(require,module,exports) {
 module.exports = "/Vector.0e47b7f0.svg";
 },{}],"src/components/Header.js":[function(require,module,exports) {
@@ -75702,7 +75722,11 @@ function AiTwotoneWarning(props) {
 }
 
 ;
-},{"../lib":"node_modules/react-icons/lib/esm/index.js"}],"src/components/PlaceDestination.js":[function(require,module,exports) {
+},{"../lib":"node_modules/react-icons/lib/esm/index.js"}],"src/images/Town.svg":[function(require,module,exports) {
+module.exports = "/Town.76be0d49.svg";
+},{}],"src/images/noto-v1_bus.svg":[function(require,module,exports) {
+module.exports = "/noto-v1_bus.ec3e818a.svg";
+},{}],"src/components/PlaceDestination.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75724,6 +75748,12 @@ var _fc = require("react-icons/fc");
 
 var _ai = require("react-icons/ai");
 
+var _Town = _interopRequireDefault(require("../images/Town.svg"));
+
+var _notoV1_bus = _interopRequireDefault(require("../images/noto-v1_bus.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -75741,35 +75771,34 @@ function WhereThePlace(place) {
     return placelist;
   }
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.WhereToGo, null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
-    className: "car",
-    size: "100px"
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.WhereToGo, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default
   }), "Where are you going"), /*#__PURE__*/_react.default.createElement(_Style.ContainerButton, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/NextTripToGo"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town",
-    size: "30px"
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _Town.default,
+    alt: "town"
   }), "Tananarivo")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town",
-    size: "30px"
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _Town.default,
+    alt: "town"
   }), "Toamasin")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, " ", /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town",
-    size: "30px"
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, " ", /*#__PURE__*/_react.default.createElement("img", {
+    src: _Town.default,
+    alt: "town"
   }), "Vatomandry")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_fc.FcFactory, {
-    className: "town",
-    size: "30px"
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _Town.default,
+    alt: "town"
   }), "Moramanga"))));
 }
 
 var _default = WhereThePlace;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js","../actions/PlacesDestinationAction":"src/actions/PlacesDestinationAction.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js"}],"src/components/Profileaccount.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js","../actions/PlacesDestinationAction":"src/actions/PlacesDestinationAction.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js","../images/Town.svg":"src/images/Town.svg","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg"}],"src/components/Profileaccount.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75800,8 +75829,6 @@ var _default = Profileaccount;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","../Style":"src/Style.js"}],"src/images/twemoji_alarm-clock.svg":[function(require,module,exports) {
 module.exports = "/twemoji_alarm-clock.ee7dea60.svg";
-},{}],"src/images/noto-v1_bus.svg":[function(require,module,exports) {
-module.exports = "/noto-v1_bus.ec3e818a.svg";
 },{}],"src/components/NextTripToGo.js":[function(require,module,exports) {
 "use strict";
 
@@ -75856,7 +75883,9 @@ function NextTripToGo() {
 
 var _default = NextTripToGo;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","../Style":"src/Style.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js","../images/twemoji_alarm-clock.svg":"src/images/twemoji_alarm-clock.svg","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg"}],"src/components/SeatsBook.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","../Style":"src/Style.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js","../images/twemoji_alarm-clock.svg":"src/images/twemoji_alarm-clock.svg","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg"}],"src/images/emojione_seat.svg":[function(require,module,exports) {
+module.exports = "/emojione_seat.9aa1ed43.svg";
+},{}],"src/components/SeatsBook.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75868,20 +75897,75 @@ var _react = _interopRequireDefault(require("react"));
 
 var _Style = require("../Style");
 
-var _ai = require("react-icons/ai");
+var _notoV1_bus = _interopRequireDefault(require("../images/noto-v1_bus.svg"));
+
+var _emojione_seat = _interopRequireDefault(require("../images/emojione_seat.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SeatsBook() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SectionContainer, null, /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_ai.AiFillCar, {
-    color: "orange",
-    size: "100px"
-  }), /*#__PURE__*/_react.default.createElement("h2", null, "Pick a seat")), /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_Style.SecondTitle, null, " Book a seat to: "), /*#__PURE__*/_react.default.createElement("h3", null, "Trip information"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.UlList, null, /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Departure Time:"), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver's contact: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Estimated duration: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Breakes: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")))), /*#__PURE__*/_react.default.createElement("div", null, "10000AR/seat"), /*#__PURE__*/_react.default.createElement(_Style.BookSeatButton, null, "Book .. seat"), /*#__PURE__*/_react.default.createElement("div", null, "Total: "))));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SectionContainer, null, /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default
+  }), /*#__PURE__*/_react.default.createElement("h2", null, "Pick a seat"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.ListSeat, null, /*#__PURE__*/_react.default.createElement("li", null, "\xA0"), /*#__PURE__*/_react.default.createElement("li", null, "\xA0"), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _emojione_seat.default,
+    alt: "seat"
+  }))))), /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement(_Style.SecondTitle, null, " Book a seat to: "), /*#__PURE__*/_react.default.createElement("h3", null, "Trip information"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement(_Style.UlList, null, /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Departure Time:"), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Driver's contact: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Estimated duration: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")), /*#__PURE__*/_react.default.createElement(_Style.List, null, /*#__PURE__*/_react.default.createElement("p", null, " Breakes: "), " ", /*#__PURE__*/_react.default.createElement("p", null, "sjsdjsdkjsd")))), /*#__PURE__*/_react.default.createElement("div", null, "10000AR/seat"), /*#__PURE__*/_react.default.createElement(_Style.BookSeatButton, null, "Book .. seat"), /*#__PURE__*/_react.default.createElement("div", null, "Total: "))));
 }
 
 var _default = SeatsBook;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Style":"src/Style.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Style":"src/Style.js","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg","../images/emojione_seat.svg":"src/images/emojione_seat.svg"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75903,12 +75987,12 @@ var _NextTripToGo = _interopRequireDefault(require("./components/NextTripToGo"))
 
 var _SeatsBook = _interopRequireDefault(require("./components/SeatsBook"));
 
-require("./Style");
+var _Style = require("./Style");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  return /*#__PURE__*/_react.default.createElement(_Style.Conatiner, null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_PlaceDestination.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {

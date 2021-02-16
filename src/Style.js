@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+
+export const Conatiner = styled.div`
+  font-family: Rubik
+`
+
 export const Head = styled.div`
  background-color: black;
  display: flex;
@@ -86,11 +91,17 @@ export const SmallContainer = styled.div`
 `;
 
 export const SectionContainer = styled.section`
-  display: flex;
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-column-gap: 1rem;
+    font-family: Rubik
+  }
+
   justify-content: space-between;
   margin-inline-start: 2rem;
   margin-inline-end: 2rem;
-`
+`;
 
 export const List = styled.li`
  display: flex;
@@ -99,8 +110,7 @@ export const List = styled.li`
 
 export const UlList = styled.ul`
   padding-left: 0;
-  margin-left: -5rem;
-`
+ `
 
 export const SecondTitle = styled.h1`
   font-size: 40px;
@@ -113,5 +123,16 @@ export const BookSeatButton = styled.button`
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border: none
+  border: none;
+`;
+
+export const ListSeat = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-column-gap: 1rem;
+  list-style: none;
+`;
+
+export const ListsSeats = styled.li`
+ 
 `;
