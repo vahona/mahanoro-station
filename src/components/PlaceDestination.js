@@ -2,11 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button, ContainerButton, WhereToGo } from "../Style";
-import  {Places} from '../actions/PlacesDestinationAction'
+import Places from '../actions/PlacesDestinationAction'
+import {connect} from 'react-redux'
 
-import { FcFactory } from "react-icons/fc";
-
-import { AiFillCar } from "react-icons/ai";
 
 import Town from "../images/Town.svg"
 import BigCar from '../images/noto-v1_bus.svg'
@@ -14,15 +12,21 @@ import BigCar from '../images/noto-v1_bus.svg'
 
 
 
-function WhereThePlace(place ) {
-    	const places = useSelector((state) => state.places);
-      console.log(places);
+function WhereThePlace({places, Places} ) {
+    	const place = useSelector((state) => state.places);
+      console.log(place);
+      const wherePlace = null
+
+      useEffect(() => {
+          // Places()
+      }, [])
+
+
 
 function placespossible() {
   if (!places) return;
   const placelist = places
     .map((place) => <div place={place}>{place.destination}</div>);
-    console.log(place);
   return placelist;
 }
 
@@ -66,4 +70,4 @@ function placespossible() {
 
 
 
-export default WhereThePlace;
+export default WhereThePlace

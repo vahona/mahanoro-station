@@ -212,3 +212,22 @@ export const ButtonChair = styled.button`
   background-color: white;
   cursor: pointer;
 `
+
+export const Price = styled.div`
+  color: rgb(255, 165, 0);
+  font-weight: 500;
+  font-size: 40px;
+`;
+
+export const ContainerPrice = styled.div`
+  display: flex;
+`;
+
+export const PriceSign = styled.div`
+  font-weight: 600;
+  margin-top: 1.5rem;
+`
+
+export const PriceContainer = styled.div`
+  margin-inline-start: 2rem
+`

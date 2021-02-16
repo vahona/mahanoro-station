@@ -9,6 +9,10 @@ import {
   ListSeat,
   CarImage,
   ButtonChair,
+  Price,
+  ContainerPrice,
+  PriceSign,
+  PriceContainer,
 } from "../Style";
 import BigCar from "../images/noto-v1_bus.svg";
 import Seat from '../images/emojione_seat.svg'
@@ -140,9 +144,14 @@ function SeatsBook() {
                 </List>
               </UlList>
             </nav>
-            <div>10000AR/seat</div>
-            <BookSeatButton>Book .. seat</BookSeatButton>
-            <div>Total: </div>
+            <PriceContainer>
+              <ContainerPrice>
+                <Price>10000</Price>
+                <PriceSign>AR/seat </PriceSign>
+              </ContainerPrice>
+              <BookSeatButton>Book .. seat</BookSeatButton>
+              <div>Total: </div>
+            </PriceContainer>
           </article>
         </SectionContainer>
       </>
