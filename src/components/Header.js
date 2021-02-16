@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Head, Title } from "../Style";
+import { Head, Title, HeadImage } from "../Style";
 import Vector from '../images/Vector.svg'
 
 
@@ -15,10 +15,10 @@ const Linksto = styled(Link)`
 
 export default function Header() {
     return (
-        <Head>
-            <img src={Vector} alt="car" />
-            <Title>Mahanoro Station</Title>
-           <Linksto to="/Profileaccount">My account</Linksto>
-        </Head>
-    )
+      <Head>
+        <HeadImage src={Vector} alt="car" />
+        <Title>Mahanoro Station</Title>
+        <Linksto to="/Profileaccount">My account</Linksto>
+      </Head>
+    );
 }

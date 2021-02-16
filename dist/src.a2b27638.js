@@ -39873,14 +39873,15 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.Head = exports.Conatiner = void 0;
+exports.Image1 = exports.Article = exports.BigContainer = exports.CancelButton = exports.UpdateButton = exports.Input = exports.SubForm = exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.HeadImage = exports.Head = exports.Conatiner = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Conatiner = _styledComponents.default.div`
-  font-family: Rubik
+  font-family: Rubik;
+ 
 `;
 exports.Conatiner = Conatiner;
 const Head = _styledComponents.default.div`
@@ -39889,9 +39890,13 @@ const Head = _styledComponents.default.div`
  justify-content: space-between;
 `;
 exports.Head = Head;
+const HeadImage = _styledComponents.default.img`
+  margin-inline-start: 2rem;
+`;
+exports.HeadImage = HeadImage;
 const Title = _styledComponents.default.h1`
  color: white;
- margin-inline-start: 2rem;
+ margin-inline-start: -25rem;
 `;
 exports.Title = Title;
 const WhereToGo = _styledComponents.default.h1`
@@ -39903,6 +39908,9 @@ const WhereToGo = _styledComponents.default.h1`
 exports.WhereToGo = WhereToGo;
 const Container = _styledComponents.default.section`
   display: flex;
+  justify-content: space-between;
+  margin-inline-start: 2rem;
+  margin-inline-end: 2rem;
 `;
 exports.Container = Container;
 const SubContainer = _styledComponents.default.section`
@@ -40015,6 +40023,57 @@ const ListsSeats = _styledComponents.default.li`
  
 `;
 exports.ListsSeats = ListsSeats;
+const SubForm = _styledComponents.default.div`
+  margin: 2rem;
+`;
+exports.SubForm = SubForm;
+const Input = _styledComponents.default.input`
+  background-color: black;
+  padding-left: 30%;
+  padding-right: 40%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+`;
+exports.Input = Input;
+const UpdateButton = _styledComponents.default.button`
+  border: none;
+  background-color: #e53170;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: white;
+  cursor: pointer;
+  margin-inline-start: 100%;
+`;
+exports.UpdateButton = UpdateButton;
+const CancelButton = _styledComponents.default.button`
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: white;
+  background-color: #FF8906;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+`;
+exports.CancelButton = CancelButton;
+const BigContainer = _styledComponents.default.div`
+   text-align: center;
+   justify-content:center;
+   align-items: center;
+`;
+exports.BigContainer = BigContainer;
+const Article = _styledComponents.default.article`
+   margin-top: 2rem;
+`;
+exports.Article = Article;
+const Image1 = _styledComponents.default.img`
+  margin-inline-start: 90%;
+`;
+exports.Image1 = Image1;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/images/Vector.svg":[function(require,module,exports) {
 module.exports = "/Vector.0e47b7f0.svg";
 },{}],"src/components/Header.js":[function(require,module,exports) {
@@ -40046,7 +40105,7 @@ const Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)`
 `;
 
 function Header() {
-  return /*#__PURE__*/_react.default.createElement(_Style.Head, null, /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement(_Style.Head, null, /*#__PURE__*/_react.default.createElement(_Style.HeadImage, {
     src: _Vector.default,
     alt: "car"
   }), /*#__PURE__*/_react.default.createElement(_Style.Title, null, "Mahanoro Station"), /*#__PURE__*/_react.default.createElement(Linksto, {
@@ -75798,7 +75857,9 @@ function WhereThePlace(place) {
 
 var _default = WhereThePlace;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js","../actions/PlacesDestinationAction":"src/actions/PlacesDestinationAction.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js","../images/Town.svg":"src/images/Town.svg","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg"}],"src/components/Profileaccount.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Style":"src/Style.js","../actions/PlacesDestinationAction":"src/actions/PlacesDestinationAction.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","react-icons/ai":"node_modules/react-icons/ai/index.esm.js","../images/Town.svg":"src/images/Town.svg","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg"}],"src/images/flat-ui_user-interface.svg":[function(require,module,exports) {
+module.exports = "/flat-ui_user-interface.725a9108.svg";
+},{}],"src/components/Profileaccount.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -75808,26 +75869,45 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _notoV1_bus = _interopRequireDefault(require("../images/noto-v1_bus.svg"));
+
+var _flatUi_userInterface = _interopRequireDefault(require("../images/flat-ui_user-interface.svg"));
+
 var _Style = require("../Style");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Profileaccount() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "My account"), /*#__PURE__*/_react.default.createElement("h4", null, "Name"), /*#__PURE__*/_react.default.createElement(_Style.Container, null, /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement("h3", null, "My personal information"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("labe", null, "First name", /*#__PURE__*/_react.default.createElement("input", {
+  return /*#__PURE__*/_react.default.createElement(_Style.BigContainer, null, /*#__PURE__*/_react.default.createElement(_Style.Container, null, /*#__PURE__*/_react.default.createElement(_Style.Article, null, /*#__PURE__*/_react.default.createElement(_Style.Image1, {
+    src: _flatUi_userInterface.default,
+    alt: "User"
+  }), /*#__PURE__*/_react.default.createElement("h3", null, "My personal information"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("labe", null, /*#__PURE__*/_react.default.createElement("div", null, "First name"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
     placeholder: "name",
     type: "text"
-  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("labe", null, "Last name", /*#__PURE__*/_react.default.createElement("input", {
+  }))), /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("labe", null, /*#__PURE__*/_react.default.createElement("div", null, "Last name"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
     placeholder: "name",
     type: "text"
-  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("labe", null, "Phone Number", /*#__PURE__*/_react.default.createElement("input", {
+  }))), /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("labe", null, /*#__PURE__*/_react.default.createElement("div", null, "Phone Number"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
     placeholder: "name",
     type: "text"
-  }))), /*#__PURE__*/_react.default.createElement("button", null, "Update"))), /*#__PURE__*/_react.default.createElement("article", null, /*#__PURE__*/_react.default.createElement("h2", null, "My bookings"), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement(_Style.Content, null, "place and date"), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "number of seat and price"), /*#__PURE__*/_react.default.createElement("button", null, "cancel")))));
+  }))), /*#__PURE__*/_react.default.createElement(_Style.UpdateButton, null, "Update"))), /*#__PURE__*/_react.default.createElement(_Style.Article, null, /*#__PURE__*/_react.default.createElement("h1", null, "My account"), /*#__PURE__*/_react.default.createElement("h4", null, "Name"), /*#__PURE__*/_react.default.createElement("h2", null, "My bookings"), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default,
+    alt: "car"
+  }), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "place and date"), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "number of seat and price"), /*#__PURE__*/_react.default.createElement(_Style.CancelButton, null, "cancel")), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default,
+    alt: "car"
+  }), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "place and date"), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "number of seat and price"), /*#__PURE__*/_react.default.createElement(_Style.CancelButton, null, "cancel")), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default,
+    alt: "car"
+  }), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "place and date"), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "number of seat and price"), /*#__PURE__*/_react.default.createElement(_Style.CancelButton, null, "cancel")), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _notoV1_bus.default,
+    alt: "car"
+  }), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "place and date"), /*#__PURE__*/_react.default.createElement(_Style.Content, null, "number of seat and price"), /*#__PURE__*/_react.default.createElement(_Style.CancelButton, null, "cancel")))));
 }
 
 var _default = Profileaccount;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Style":"src/Style.js"}],"src/images/twemoji_alarm-clock.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../images/noto-v1_bus.svg":"src/images/noto-v1_bus.svg","../images/flat-ui_user-interface.svg":"src/images/flat-ui_user-interface.svg","../Style":"src/Style.js"}],"src/images/twemoji_alarm-clock.svg":[function(require,module,exports) {
 module.exports = "/twemoji_alarm-clock.ee7dea60.svg";
 },{}],"src/components/NextTripToGo.js":[function(require,module,exports) {
 "use strict";

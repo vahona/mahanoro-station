@@ -1,48 +1,84 @@
 import React from 'react'
 
-import { Container, SubContainer, Content } from "../Style";
+import BigCar from "../images/noto-v1_bus.svg";
+
+import UserInterface from '../images/flat-ui_user-interface.svg'
+
+import {
+  Container,
+  SubContainer,
+  Content,
+  SubForm,
+  Input,
+  UpdateButton,
+  CancelButton,
+  BigContainer,
+  Article,
+  Image1,
+} from "../Style";
+
 
 
 function Profileaccount() {
     return (
-      <div>
-        <h1>My account</h1>
-        <h4>Name</h4>
+      <BigContainer>
         <Container>
-          <article>
+          <Article>
+            <Image1 src={UserInterface} alt="User" />
             <h3>My personal information</h3>
             <form>
-              <div>
+              <SubForm>
                 <labe>
-                  First name
-                  <input placeholder="name" type="text" />
+                  <div>First name</div>
+                  <Input placeholder="name" type="text" />
                 </labe>
-              </div>
-              <div>
+              </SubForm>
+              <SubForm>
                 <labe>
-                  Last name
-                  <input placeholder="name" type="text" />
+                  <div>Last name</div>
+                  <Input placeholder="name" type="text" />
                 </labe>
-              </div>
-              <div>
+              </SubForm>
+              <SubForm>
                 <labe>
-                  Phone Number
-                  <input placeholder="name" type="text" />
+                  <div>Phone Number</div>
+                  <Input placeholder="name" type="text" />
                 </labe>
-              </div>
-              <button>Update</button>
+              </SubForm>
+              <UpdateButton>Update</UpdateButton>
             </form>
-          </article>
-          <article>
+          </Article>
+          <Article>
+            <h1>My account</h1>
+            <h4>Name</h4>
             <h2>My bookings</h2>
             <SubContainer>
-                <Content>place and date</Content>
-                <Content>number of seat and price</Content>
-                <button>cancel</button>
+              <img src={BigCar} alt="car" />
+              <Content>place and date</Content>
+              <Content>number of seat and price</Content>
+              <CancelButton>cancel</CancelButton>
             </SubContainer>
-          </article>
+            <SubContainer>
+              <img src={BigCar} alt="car" />
+              <Content>place and date</Content>
+              <Content>number of seat and price</Content>
+              <CancelButton>cancel</CancelButton>
+            </SubContainer>
+            <SubContainer>
+              <img src={BigCar} alt="car" />
+              <Content>place and date</Content>
+              <Content>number of seat and price</Content>
+              <CancelButton>cancel</CancelButton>
+            </SubContainer>
+            <SubContainer>
+              <img src={BigCar} alt="car" />
+              <Content>place and date</Content>
+              <Content>number of seat and price</Content>
+              <CancelButton>cancel</CancelButton>
+            </SubContainer>
+          </Article>
         </Container>
-      </div>
+      </BigContainer>
     );
 }
 

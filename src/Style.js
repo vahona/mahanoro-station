@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 
 export const Conatiner = styled.div`
-  font-family: Rubik
+  font-family: Rubik;
+ 
 `
 
 export const Head = styled.div`
@@ -11,9 +12,13 @@ export const Head = styled.div`
  justify-content: space-between;
 `
 
+export const HeadImage = styled.img`
+  margin-inline-start: 2rem;
+`
+
 export const Title = styled.h1`
  color: white;
- margin-inline-start: 2rem;
+ margin-inline-start: -25rem;
 `
 
 export const WhereToGo = styled.h1`
@@ -25,6 +30,9 @@ export const WhereToGo = styled.h1`
 
 export const Container = styled.section`
   display: flex;
+  justify-content: space-between;
+  margin-inline-start: 2rem;
+  margin-inline-end: 2rem;
 `
 
 export const SubContainer = styled.section`
@@ -136,3 +144,54 @@ export const ListSeat = styled.ul`
 export const ListsSeats = styled.li`
  
 `;
+
+export const SubForm = styled.div`
+  margin: 2rem;
+`
+
+export const Input = styled.input`
+  background-color: black;
+  padding-left: 30%;
+  padding-right: 40%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+`
+
+export const UpdateButton = styled.button`
+  border: none;
+  background-color: #e53170;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: white;
+  cursor: pointer;
+  margin-inline-start: 100%;
+`;
+
+export const CancelButton = styled.button`
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: white;
+  background-color: #FF8906;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+`;
+
+export const BigContainer = styled.div`
+   text-align: center;
+   justify-content:center;
+   align-items: center;
+`
+
+export const Article = styled.article`
+   margin-top: 2rem;
+`
+
+export const Image1 = styled.img`
+  margin-inline-start: 90%;
+`
