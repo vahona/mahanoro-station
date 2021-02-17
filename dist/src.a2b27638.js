@@ -36280,7 +36280,7 @@ var _whereThePlaceReducer = _interopRequireDefault(require("./whereThePlaceReduc
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = (0, _redux.combineReducers)({
-  Place: _whereThePlaceReducer.default
+  place: _whereThePlaceReducer.default
 });
 
 exports.default = _default;
@@ -39873,7 +39873,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ValueOfInformation = exports.TitleInformation = exports.PriceContainer = exports.PriceSign = exports.ContainerPrice = exports.Price = exports.ButtonChair = exports.CarImage = exports.AccountHeader = exports.Image1 = exports.Article = exports.BigContainer = exports.CancelButton = exports.UpdateButton = exports.Input = exports.SubForm = exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.ImageTown = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.ContainerToGo = exports.ImageToGo = exports.WhereToGo = exports.SubTitlewheretogo = exports.Title = exports.HeadImage = exports.Head = exports.Conatiner = void 0;
+exports.DateForGoing = exports.NextTrip = exports.NameOfPlace = exports.ValueOfInformation = exports.TitleInformation = exports.PriceContainer = exports.PriceSign = exports.ContainerPrice = exports.Price = exports.ButtonChair = exports.CarImage = exports.AccountHeader = exports.Image1 = exports.Article = exports.BigContainer = exports.CancelButton = exports.UpdateButton = exports.Input = exports.SubForm = exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.ImageTown = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.ContainerToGo = exports.ImageToGo = exports.WhereToGo = exports.SubTitlewheretogo = exports.Title = exports.HeadImage = exports.Head = exports.Conatiner = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -40005,7 +40005,7 @@ exports.SmallContainer = SmallContainer;
 const SectionContainer = _styledComponents.default.section`
   @media (min-width: 600px) {
     display: grid;
-    grid-template-columns: repeat(2, 400px);
+    grid-template-columns: repeat(2, 40%);
     grid-column-gap: 10rem;
     font-family: Rubik
   }
@@ -40156,6 +40156,28 @@ const ValueOfInformation = _styledComponents.default.p`
   color: #2f2f2f;
 `;
 exports.ValueOfInformation = ValueOfInformation;
+const NameOfPlace = _styledComponents.default.p`
+  color: #e53170;
+  font-weight: 400;
+  font-size: 40px;
+`;
+exports.NameOfPlace = NameOfPlace;
+const NextTrip = _styledComponents.default.p`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 76px;
+  color: #000000;
+`;
+exports.NextTrip = NextTrip;
+const DateForGoing = _styledComponents.default.div`
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 33px;
+color: #FF8906;
+`;
+exports.DateForGoing = DateForGoing;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/images/Vector.svg":[function(require,module,exports) {
 module.exports = "/Vector.0e47b7f0.svg";
 },{}],"src/components/Header.js":[function(require,module,exports) {
@@ -40247,17 +40269,17 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function WhereThePlace({
-  places,
-  Places
-}) {
+function WhereThePlace() {
   const place = (0, _reactRedux.useSelector)(state => state.places);
   console.log(place);
-  const wherePlace = null;
-  (0, _react.useEffect)(() => {// Places()
-  }, []);
+  const wherePlace = null; // useEffect(() => {
+  //     Places()
+  // }, [])
 
-  function placespossible() {
+  function placespossible({
+    places,
+    Places
+  }) {
     if (!places) return;
     const placelist = Places.map(place => /*#__PURE__*/_react.default.createElement("div", {
       place: place
@@ -40273,17 +40295,17 @@ function WhereThePlace({
     src: _Town.default,
     alt: "town"
   }), "Tananarivo")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
+    to: "/NextTripToGo"
   }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_Style.ImageTown, {
     src: _Town.default,
     alt: "town"
   }), "Toamasin")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
+    to: "/NextTripToGo"
   }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, " ", /*#__PURE__*/_react.default.createElement(_Style.ImageTown, {
     src: _Town.default,
     alt: "town"
   }), "Vatomandry")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
+    to: "/NextTripToGo"
   }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_Style.ImageTown, {
     src: _Town.default,
     alt: "town"
@@ -76018,23 +76040,24 @@ const Linksto = (0, _styledComponents.default)(_reactRouterDom.Link)`
 `;
 const date = new Date().toDateString();
 const newDate = new Date();
-const tomorrow = newDate.setDate(new Date().getDate() + 1);
+const tomorrow = newDate.setDate(new Date().getDate() + 1); //  const setTommorow = tomorrow.toDateString()
+
 const thirdDay = tomorrow + 1;
 
 function NextTripToGo() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.SmallContainer, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _twemoji_alarmClock.default
-  })), /*#__PURE__*/_react.default.createElement("h2", null, "Next trips to:")), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement("img", {
+  })), /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_Style.NextTrip, null, "Next trips to: "), " ", /*#__PURE__*/_react.default.createElement(_Style.NameOfPlace, null, "Name of place"))), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _notoV1_bus.default
-  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, date), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
+  }), /*#__PURE__*/_react.default.createElement(_Style.DateForGoing, null, /*#__PURE__*/_react.default.createElement("div", null, date), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
     to: "/SeatsBook"
   }, /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat"))), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _notoV1_bus.default
-  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, tomorrow), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
+  }), /*#__PURE__*/_react.default.createElement(_Style.DateForGoing, null, /*#__PURE__*/_react.default.createElement("div", null, tomorrow), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
     to: "/SeatsBook"
   }, /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, "Book a seat"))), /*#__PURE__*/_react.default.createElement(_Style.SubContainers, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _notoV1_bus.default
-  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, thirdDay), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
+  }), /*#__PURE__*/_react.default.createElement(_Style.DateForGoing, null, /*#__PURE__*/_react.default.createElement("div", null, thirdDay), /*#__PURE__*/_react.default.createElement("div", null, " 17: 00 ")), /*#__PURE__*/_react.default.createElement(Linksto, {
     to: "/SeatsBook"
   }, /*#__PURE__*/_react.default.createElement(_Style.ButtonBook, null, " Book a seat "))));
 }

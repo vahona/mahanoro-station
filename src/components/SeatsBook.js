@@ -20,6 +20,12 @@ import BigCar from "../images/noto-v1_bus.svg";
 import Seat from '../images/emojione_seat.svg'
 
 function SeatsBook() {
+
+  
+
+
+
+
     return (
       <>
         <SectionContainer>

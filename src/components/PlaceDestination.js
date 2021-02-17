@@ -20,21 +20,20 @@ import BigCar from '../images/noto-v1_bus.svg'
 
 
 
-function WhereThePlace({places, Places} ) {
+function WhereThePlace( ) {
     	const place = useSelector((state) => state.places);
       console.log(place);
       const wherePlace = null
 
-      useEffect(() => {
-          // Places()
-      }, [])
+      // useEffect(() => {
+      //     Places()
+      // }, [])
 
-
-
-function placespossible() {
+function placespossible({ places, Places }) {
   if (!places) return;
-  const placelist = Places
-    .map((place) => <div place={place}>{place.destination}</div>);
+  const placelist = Places.map((place) => (
+    <div place={place}>{place.destination}</div>
+  ));
   return placelist;
 }
 
@@ -52,20 +51,20 @@ function placespossible() {
               Tananarivo
             </Button>
           </Link>
-          <Link to="/">
+          <Link to="/NextTripToGo">
             <Button>
               <ImageTown src={Town} alt="town" />
               Toamasin
             </Button>
           </Link>
-          <Link to="/">
+          <Link to="/NextTripToGo">
             <Button>
               {" "}
               <ImageTown src={Town} alt="town" />
               Vatomandry
             </Button>
           </Link>
-          <Link to="/">
+          <Link to="/NextTripToGo">
             <Button>
               <ImageTown src={Town} alt="town" />
               Moramanga

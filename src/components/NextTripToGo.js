@@ -6,7 +6,14 @@ import styled from "styled-components";
 
 
 import { FcAlarmClock } from "react-icons/fc";
-import {SubContainers, ButtonBook, SmallContainer} from '../Style'
+import {
+  SubContainers,
+  ButtonBook,
+  SmallContainer,
+  NameOfPlace,
+  NextTrip,
+  DateForGoing,
+} from "../Style";
 import { AiFillCar } from "react-icons/ai";
 import Clock from '../images/twemoji_alarm-clock.svg'
 import BigCar from '../images/noto-v1_bus.svg'
@@ -22,6 +29,7 @@ const date = new Date().toDateString();
 const  newDate = new Date();
 
  const tomorrow = newDate.setDate(new Date().getDate() + 1);
+//  const setTommorow = tomorrow.toDateString()
 
  const thirdDay = tomorrow + 1
 
@@ -32,34 +40,36 @@ function NextTripToGo() {
           <div>
             <img src={Clock} />
           </div>
-          <h2>Next trips to:</h2>
+          <h2>
+            <NextTrip>Next trips to: </NextTrip> <NameOfPlace>Name of place</NameOfPlace>
+          </h2>
         </SmallContainer>
         <SubContainers>
           <img src={BigCar} />
-          <div>
+          <DateForGoing>
             <div>{date}</div>
             <div> 17: 00 </div>
-          </div>
+          </DateForGoing>
           <Linksto to="/SeatsBook">
             <ButtonBook>Book a seat</ButtonBook>
           </Linksto>
         </SubContainers>
         <SubContainers>
           <img src={BigCar} />
-          <div>
+          <DateForGoing>
             <div>{tomorrow}</div>
             <div> 17: 00 </div>
-          </div>
+          </DateForGoing>
           <Linksto to="/SeatsBook">
             <ButtonBook>Book a seat</ButtonBook>
           </Linksto>
         </SubContainers>
         <SubContainers>
           <img src={BigCar} />
-          <div>
+          <DateForGoing>
             <div>{thirdDay}</div>
             <div> 17: 00 </div>
-          </div>
+          </DateForGoing>
           <Linksto to="/SeatsBook">
             <ButtonBook> Book a seat </ButtonBook>
           </Linksto>

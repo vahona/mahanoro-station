@@ -128,7 +128,7 @@ export const SmallContainer = styled.div`
 export const SectionContainer = styled.section`
   @media (min-width: 600px) {
     display: grid;
-    grid-template-columns: repeat(2, 400px);
+    grid-template-columns: repeat(2, 40%);
     grid-column-gap: 10rem;
     font-family: Rubik
   }
@@ -276,4 +276,26 @@ export const ValueOfInformation = styled.p`
   line-height: 28px;
 
   color: #2f2f2f;
+`;
+
+export const NameOfPlace = styled.p`
+  color: #e53170;
+  font-weight: 400;
+  font-size: 40px;
+`;
+
+export const NextTrip = styled.p`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 76px;
+  color: #000000;
+`;
+
+export const DateForGoing = styled.div`
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 33px;
+color: #FF8906;
 `;
