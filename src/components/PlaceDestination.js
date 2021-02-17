@@ -1,7 +1,15 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Button, ContainerButton, WhereToGo } from "../Style";
+import {
+  Button,
+  ContainerButton,
+  WhereToGo,
+  ContainerToGo,
+  ImageToGo,
+  ImageTown,
+  SubTitlewheretogo,
+} from "../Style";
 import Places from '../actions/PlacesDestinationAction'
 import {connect} from 'react-redux'
 
@@ -32,37 +40,39 @@ function placespossible() {
 
   return (
     <>
-      <WhereToGo>
-        <img src={BigCar} />
-        Where are you going
-      </WhereToGo>
-      <ContainerButton>
-        <Link to="/NextTripToGo">
-          <Button>
-            <img src={Town} alt="town" />
-            Tananarivo
-          </Button>
-        </Link>
-        <Link to="/">
-          <Button>
-            <img src={Town} alt="town" />
-            Toamasin
-          </Button>
-        </Link>
-        <Link to="/">
-          <Button>
-            {" "}
-            <img src={Town} alt="town" />
-            Vatomandry
-          </Button>
-        </Link>
-        <Link to="/">
-          <Button>
-            <img src={Town} alt="town" />
-            Moramanga
-          </Button>
-        </Link>
-      </ContainerButton>
+      <ContainerToGo>
+        <WhereToGo>
+          <ImageToGo src={BigCar} />
+          <SubTitlewheretogo>Where are you going</SubTitlewheretogo>
+        </WhereToGo>
+        <ContainerButton>
+          <Link to="/NextTripToGo">
+            <Button>
+              <ImageTown src={Town} alt="town" />
+              Tananarivo
+            </Button>
+          </Link>
+          <Link to="/">
+            <Button>
+              <ImageTown src={Town} alt="town" />
+              Toamasin
+            </Button>
+          </Link>
+          <Link to="/">
+            <Button>
+              {" "}
+              <ImageTown src={Town} alt="town" />
+              Vatomandry
+            </Button>
+          </Link>
+          <Link to="/">
+            <Button>
+              <ImageTown src={Town} alt="town" />
+              Moramanga
+            </Button>
+          </Link>
+        </ContainerButton>
+      </ContainerToGo>
     </>
   );
 }

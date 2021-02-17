@@ -39873,7 +39873,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.PriceContainer = exports.PriceSign = exports.ContainerPrice = exports.Price = exports.ButtonChair = exports.CarImage = exports.AccountHeader = exports.Image1 = exports.Article = exports.BigContainer = exports.CancelButton = exports.UpdateButton = exports.Input = exports.SubForm = exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.WhereToGo = exports.Title = exports.HeadImage = exports.Head = exports.Conatiner = void 0;
+exports.PriceContainer = exports.PriceSign = exports.ContainerPrice = exports.Price = exports.ButtonChair = exports.CarImage = exports.AccountHeader = exports.Image1 = exports.Article = exports.BigContainer = exports.CancelButton = exports.UpdateButton = exports.Input = exports.SubForm = exports.ListsSeats = exports.ListSeat = exports.BookSeatButton = exports.SecondTitle = exports.UlList = exports.List = exports.SectionContainer = exports.SmallContainer = exports.ButtonBook = exports.SubContainers = exports.IconContainer = exports.ContainerButton = exports.ImageTown = exports.Button = exports.Content = exports.SubContainer = exports.Container = exports.ContainerToGo = exports.ImageToGo = exports.WhereToGo = exports.SubTitlewheretogo = exports.Title = exports.HeadImage = exports.Head = exports.Conatiner = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -39896,16 +39896,31 @@ const HeadImage = _styledComponents.default.img`
 exports.HeadImage = HeadImage;
 const Title = _styledComponents.default.h1`
  color: white;
- margin-inline-start: -25rem;
+
 `;
 exports.Title = Title;
+const SubTitlewheretogo = _styledComponents.default.div`
+  margin-top: 1rem;
+ 
+`;
+exports.SubTitlewheretogo = SubTitlewheretogo;
 const WhereToGo = _styledComponents.default.h1`
-  .car {
-    color: #ff8c00;
-    margin-right: 1rem;
-  }
+  display: flex;
+  justify-content: space-between;
+    margin-inline-end: 27%;
+    margin-inline-start: 13%;
 `;
 exports.WhereToGo = WhereToGo;
+const ImageToGo = _styledComponents.default.img`
+  margin-right: 3rem;
+  
+`;
+exports.ImageToGo = ImageToGo;
+const ContainerToGo = _styledComponents.default.div`
+   text-align: center;
+   align-items: center;
+`;
+exports.ContainerToGo = ContainerToGo;
 const Container = _styledComponents.default.section`
   display: flex;
   justify-content: space-between;
@@ -39922,22 +39937,32 @@ const Content = _styledComponents.default.section`
 `;
 exports.Content = Content;
 const Button = _styledComponents.default.button`
-  padding-left: 3rem;
-  padding-right: 3rem;
+  width: 80%;
   color: white;
   background-color: #0f0e17;
   padding: 1rem;
   margin: 1rem;
   text-transform: uppercase;
+  font-weight: 1;
+  font-size: 36px;
+  line-height: 42.66px;
   cursor: pointer;
-
-  .town {
-      margin-right: 1rem;
-  }
 `;
 exports.Button = Button;
+const ImageTown = _styledComponents.default.img`
+  margin-right: 2rem
+`;
+exports.ImageTown = ImageTown;
 const ContainerButton = _styledComponents.default.div`
-  columns: 2;
+  margin-inline-start: 10%;
+  margin-inline-end: 10%;
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    grid-gap: 5px;
+  }
+
+
 `;
 exports.ContainerButton = ContainerButton;
 const IconContainer = _styledComponents.default.div`
@@ -39949,6 +39974,8 @@ exports.IconContainer = IconContainer;
 const SubContainers = _styledComponents.default.div`
   display: flex;
   justify-content: space-between;
+  margin-inline-start: 10%;
+  margin-inline-end: 10%;
 `;
 exports.SubContainers = SubContainers;
 const ButtonBook = _styledComponents.default.button`
@@ -40108,7 +40135,7 @@ const PriceSign = _styledComponents.default.div`
 `;
 exports.PriceSign = PriceSign;
 const PriceContainer = _styledComponents.default.div`
-  margin-inline-start: 2rem
+  margin-inline-start: 3rem
 `;
 exports.PriceContainer = PriceContainer;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/images/Vector.svg":[function(require,module,exports) {
@@ -40218,29 +40245,29 @@ function WhereThePlace({
     return placelist;
   }
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.WhereToGo, null, /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Style.ContainerToGo, null, /*#__PURE__*/_react.default.createElement(_Style.WhereToGo, null, /*#__PURE__*/_react.default.createElement(_Style.ImageToGo, {
     src: _notoV1_bus.default
-  }), "Where are you going"), /*#__PURE__*/_react.default.createElement(_Style.ContainerButton, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }), /*#__PURE__*/_react.default.createElement(_Style.SubTitlewheretogo, null, "Where are you going")), /*#__PURE__*/_react.default.createElement(_Style.ContainerButton, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/NextTripToGo"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_Style.ImageTown, {
     src: _Town.default,
     alt: "town"
   }), "Tananarivo")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_Style.ImageTown, {
     src: _Town.default,
     alt: "town"
   }), "Toamasin")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, " ", /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, " ", /*#__PURE__*/_react.default.createElement(_Style.ImageTown, {
     src: _Town.default,
     alt: "town"
   }), "Vatomandry")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement(_Style.Button, null, /*#__PURE__*/_react.default.createElement(_Style.ImageTown, {
     src: _Town.default,
     alt: "town"
-  }), "Moramanga"))));
+  }), "Moramanga")))));
 }
 
 var _default = WhereThePlace;
@@ -76165,7 +76192,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62592" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62374" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

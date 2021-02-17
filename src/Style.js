@@ -18,15 +18,30 @@ export const HeadImage = styled.img`
 
 export const Title = styled.h1`
  color: white;
- margin-inline-start: -25rem;
+
 `
 
-export const WhereToGo = styled.h1`
-  .car {
-    color: #ff8c00;
-    margin-right: 1rem;
-  }
+export const SubTitlewheretogo = styled.div`
+  margin-top: 1rem;
+ 
 `;
+
+export const WhereToGo = styled.h1`
+  display: flex;
+  justify-content: space-between;
+    margin-inline-end: 27%;
+    margin-inline-start: 13%;
+`;
+
+export const ImageToGo = styled.img`
+  margin-right: 3rem;
+  
+`;
+
+export const ContainerToGo = styled.div`
+   text-align: center;
+   align-items: center;
+`
 
 export const Container = styled.section`
   display: flex;
@@ -44,23 +59,34 @@ export const Content = styled.section`
 `;
 
 export const Button = styled.button`
-  padding-left: 3rem;
-  padding-right: 3rem;
+  width: 80%;
   color: white;
   background-color: #0f0e17;
   padding: 1rem;
   margin: 1rem;
   text-transform: uppercase;
+  font-weight: 1;
+  font-size: 36px;
+  line-height: 42.66px;
   cursor: pointer;
-
-  .town {
-      margin-right: 1rem;
-  }
 `;
 
-export const ContainerButton = styled.div`
-  columns: 2;
+
+export const ImageTown = styled.img`
+  margin-right: 2rem
 `
+
+export const ContainerButton = styled.div`
+  margin-inline-start: 10%;
+  margin-inline-end: 10%;
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    grid-gap: 5px;
+  }
+
+
+`;
 
 export const IconContainer = styled.div`
   .clock {
@@ -71,6 +97,8 @@ export const IconContainer = styled.div`
 export const SubContainers = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-inline-start: 10%;
+  margin-inline-end: 10%;
 `
 
 export const ButtonBook = styled.button`
@@ -229,5 +257,5 @@ export const PriceSign = styled.div`
 `
 
 export const PriceContainer = styled.div`
-  margin-inline-start: 2rem
+  margin-inline-start: 3rem
 `
