@@ -7,6 +7,10 @@
    - The seconde page containe many inforrmatio but the most interesting one is the pinc button which linked to the booking place for travelling, this button will allow the user to see the booking which hold on some information of the trip like time, date, and the place avalable place once the user booked their place.
    - There is an account link on the top of the page which is clicable to let the user to go in their account and see what reservation they have made which does not really work in here but it meant to be like that.
 
+## Error
+
+- There is an error "redux.js:319 Unexpected key "places" found in preloadedState argument passed to createStore. Expected to find one of the known reducer keys instead: "place". Unexpected keys will be ignored." which I think from the feacthing the date which is not success at all.
+
 ##  The screen shoot of the project
 
 ### First page

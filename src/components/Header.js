@@ -19,7 +19,7 @@ export default function Header() {
     return (
       <Head>
         <HeadImage src={Vector} alt="car" />
-        <Title>Mahanoro Station</Title>
+          <Title>Mahanoro Station</Title>
         <Linksto to="/Profileaccount">My account</Linksto>
       </Head>
     );
