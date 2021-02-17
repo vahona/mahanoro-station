@@ -151,7 +151,7 @@ function SeatsBook() {
                 <Price>10000</Price>
                 <PriceSign>AR/seat </PriceSign>
               </ContainerPrice>
-              <BookSeatButton>Book .. seat</BookSeatButton>
+              <BookSeatButton >Book .. seat</BookSeatButton>
               <div>Total: </div>
             </PriceContainer>
           </article>

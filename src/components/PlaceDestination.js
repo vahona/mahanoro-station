@@ -33,7 +33,7 @@ function WhereThePlace({places, Places} ) {
 
 function placespossible() {
   if (!places) return;
-  const placelist = places
+  const placelist = Places
     .map((place) => <div place={place}>{place.destination}</div>);
   return placelist;
 }

@@ -40259,7 +40259,7 @@ function WhereThePlace({
 
   function placespossible() {
     if (!places) return;
-    const placelist = places.map(place => /*#__PURE__*/_react.default.createElement("div", {
+    const placelist = Places.map(place => /*#__PURE__*/_react.default.createElement("div", {
       place: place
     }, place.destination));
     return placelist;
