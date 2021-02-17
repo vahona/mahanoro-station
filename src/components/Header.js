@@ -11,6 +11,8 @@ const Linksto = styled(Link)`
   margin-inline-end: 2rem;
   margin-top: 2rem;
   cursor: pointer;
+  position: absolute;
+  right: 0
 `;
 
 export default function Header() {

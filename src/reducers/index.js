@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import place from './whereThePlaceReducer';
+import Place from './whereThePlaceReducer';
 
 
 
-export default combineReducers({ place });
+export default combineReducers({ Place });

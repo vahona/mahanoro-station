@@ -13,6 +13,8 @@ import {
   ContainerPrice,
   PriceSign,
   PriceContainer,
+  TitleInformation,
+  ValueOfInformation,
 } from "../Style";
 import BigCar from "../images/noto-v1_bus.svg";
 import Seat from '../images/emojione_seat.svg'
@@ -128,19 +130,19 @@ function SeatsBook() {
             <nav>
               <UlList>
                 <List>
-                  <p> Departure Time:</p> <p>sjsdjsdkjsd</p>
+                  <TitleInformation> Departure Time:</TitleInformation> <ValueOfInformation>sjsdjsdkjsd</ValueOfInformation>
                 </List>
                 <List>
-                  <p> Driver: </p> <p>sjsdjsdkjsd</p>
+                  <TitleInformation> Driver: </TitleInformation> <ValueOfInformation>Royal</ValueOfInformation>
                 </List>
                 <List>
-                  <p> Driver's contact: </p> <p>sjsdjsdkjsd</p>
+                  <TitleInformation> Driver's contact: </TitleInformation> <ValueOfInformation>0347829</ValueOfInformation>
                 </List>
                 <List>
-                  <p> Estimated duration: </p> <p>sjsdjsdkjsd</p>
+                  <TitleInformation> Estimated duration: </TitleInformation> <ValueOfInformation>9h</ValueOfInformation>
                 </List>
                 <List>
-                  <p> Breakes: </p> <p>sjsdjsdkjsd</p>
+                  <TitleInformation> Breakes: </TitleInformation> <ValueOfInformation>10min</ValueOfInformation>
                 </List>
               </UlList>
             </nav>

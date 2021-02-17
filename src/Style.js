@@ -9,7 +9,6 @@ export const Conatiner = styled.div`
 export const Head = styled.div`
  background-color: black;
  display: flex;
- justify-content: space-between;
 `
 
 export const HeadImage = styled.img`
@@ -18,7 +17,7 @@ export const HeadImage = styled.img`
 
 export const Title = styled.h1`
  color: white;
-
+ margin-inline-start: 2%;
 `
 
 export const SubTitlewheretogo = styled.div`
@@ -73,7 +72,7 @@ export const Button = styled.button`
 
 
 export const ImageTown = styled.img`
-  margin-right: 2rem
+  margin-right: 2rem;
 `
 
 export const ContainerButton = styled.div`
@@ -130,13 +129,14 @@ export const SectionContainer = styled.section`
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: repeat(2, 400px);
-    grid-column-gap: 1rem;
+    grid-column-gap: 10rem;
     font-family: Rubik
   }
 
-  justify-content: space-between;
   margin-inline-start: 2rem;
   margin-inline-end: 2rem;
+  justify-content: center;
+  margin-block-start: 1rem;
 `;
 
 export const List = styled.li`
@@ -257,5 +257,23 @@ export const PriceSign = styled.div`
 `
 
 export const PriceContainer = styled.div`
-  margin-inline-start: 3rem
-`
+  margin-inline-start: 3rem;
+`;
+
+export const TitleInformation = styled.p`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #a7a9be;
+`;
+
+export const ValueOfInformation = styled.p`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #2f2f2f;
+`;
