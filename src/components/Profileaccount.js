@@ -29,22 +29,22 @@ function Profileaccount() {
             <h3>My personal information</h3>
             <form>
               <SubForm>
-                <labe>
+                <label>
                   <div>First name</div>
                   <Input placeholder="name" type="text" />
-                </labe>
+                </label>
               </SubForm>
               <SubForm>
-                <labe>
+                <label>
                   <div>Last name</div>
                   <Input placeholder="name" type="text" />
-                </labe>
+                </label>
               </SubForm>
               <SubForm>
-                <labe>
+                <label>
                   <div>Phone Number</div>
                   <Input placeholder="name" type="text" />
-                </labe>
+                </label>
               </SubForm>
               <UpdateButton>Update</UpdateButton>
             </form>

@@ -40338,13 +40338,13 @@ function Profileaccount() {
   return /*#__PURE__*/_react.default.createElement(_Style.BigContainer, null, /*#__PURE__*/_react.default.createElement(_Style.Container, null, /*#__PURE__*/_react.default.createElement(_Style.Article, null, /*#__PURE__*/_react.default.createElement(_Style.Image1, {
     src: _flatUi_userInterface.default,
     alt: "User"
-  }), /*#__PURE__*/_react.default.createElement("h3", null, "My personal information"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("labe", null, /*#__PURE__*/_react.default.createElement("div", null, "First name"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
+  }), /*#__PURE__*/_react.default.createElement("h3", null, "My personal information"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("div", null, "First name"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
     placeholder: "name",
     type: "text"
-  }))), /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("labe", null, /*#__PURE__*/_react.default.createElement("div", null, "Last name"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
+  }))), /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("div", null, "Last name"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
     placeholder: "name",
     type: "text"
-  }))), /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("labe", null, /*#__PURE__*/_react.default.createElement("div", null, "Phone Number"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
+  }))), /*#__PURE__*/_react.default.createElement(_Style.SubForm, null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("div", null, "Phone Number"), /*#__PURE__*/_react.default.createElement(_Style.Input, {
     placeholder: "name",
     type: "text"
   }))), /*#__PURE__*/_react.default.createElement(_Style.UpdateButton, null, "Update"))), /*#__PURE__*/_react.default.createElement(_Style.Article, null, /*#__PURE__*/_react.default.createElement(_Style.AccountHeader, null, "My account"), /*#__PURE__*/_react.default.createElement("h4", null, "Name"), /*#__PURE__*/_react.default.createElement("h2", null, "My bookings"), /*#__PURE__*/_react.default.createElement(_Style.SubContainer, null, /*#__PURE__*/_react.default.createElement("img", {
