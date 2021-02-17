@@ -9,7 +9,7 @@
 
 ## Error
 
-- There is an error "redux.js:319 Unexpected key "places" found in preloadedState argument passed to createStore. Expected to find one of the known reducer keys instead: "place". Unexpected keys will be ignored." which I think from the feacthing the date which is not success at all.
+-  There is an error "redux.js:319 Unexpected key "places" found in preloadedState argument passed to createStore. Expected to find one of the known reducer keys instead: "place". Unexpected keys will be ignored." which I think from the feacthing the date which is not success at all.
 
 ##  The screen shoot of the project
 
